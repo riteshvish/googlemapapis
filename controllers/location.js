@@ -5,6 +5,8 @@ var async = require("async");
 var redis = require('./../helpers/redis');
 var googlemap = require('./../helpers/googlemap');
 var utils = require('./../helpers/utils');
+var commonController = require('./common');
+
 
 var googleMapsClient = require('@google/maps').createClient({
   key: conf.google.mapkey
@@ -38,41 +40,18 @@ function findAll(req, res, next) {
   var authorization = req.headers['authorization'] || req.query.access_token;
   let page = (req.query.page || 1) - 1
   let limit = parseInt(req.query.limit || 10)
-  LocationModels.count({
+  commonController.findAll(LocationModels, {
+    page: page,
+    limit: limit,
+    type: "search",
+    authorization: authorization,
     username: req.username
-  }, function(err, count) {
+  }, function(err, data) {
     if (err) {
-      return res.send(err)
+      return res.send(500, err)
     } else {
-      LocationModels.find({
-        username: req.username
-      }, {
-        __v: 0
-      }, {
-        limit: limit,
-        skip: limit * page
-      }, function(err, location) {
-        if (err) {
-          return res.send(err)
-        }
-        var next = `http://localhost:3000/location/search/list/?limit=${limit}&page=${page+2}&access_token=${authorization}`;
-        var pervious = `http://localhost:3000/location/search/list/?limit=${limit}&page=${(page)}&access_token=${authorization}`;
-        let pagination = {};
-        if (location && location.length == limit) {
-          pagination.next = next;
-        }
-        if (page != 0) {
-          pagination.pervious = pervious;
-        }
-
-        res.send({
-          page: page + 1,
-          limit: limit,
-          location: location,
-          total: count,
-          pagination: pagination
-        })
-      })
+      console.log("here");
+      res.send(data)
     }
   })
 }

@@ -5,6 +5,8 @@ var redis = require('./../helpers/redis');
 var utils = require('./../helpers/utils');
 var googlemap = require('./../helpers/googlemap');
 var UsersavedlocationModels = require('./../models/usersavedlocation');
+var commonController = require('./common');
+
 
 function findAll(req, res, next) {
   // console.log(" im ma hereadsfas dfasdjflkasjdl");
@@ -12,41 +14,17 @@ function findAll(req, res, next) {
   let page = (req.query.page || 1) - 1
 
   let limit = parseInt(req.query.limit || 10)
-  UsersavedlocationModels.count({
+  commonController.findAll(UsersavedlocationModels, {
+    page: page,
+    limit: limit,
+    type: "save",
+    authorization: authorization,
     username: req.username
-  }, function(err, count) {
+  }, function(err, data) {
     if (err) {
-      return res.send(err)
+      return res.send(500, err)
     } else {
-      UsersavedlocationModels.find({
-        username: req.username
-      }, {
-        __v: 0
-      }, {
-        limit: limit,
-        skip: limit * page
-      }, function(err, saves) {
-        if (err) {
-          return res.send(err)
-        }
-        var next = `http://localhost:3000/location/save/?limit=${limit}&page=p=${page+1}&access_token=${authorization}`;
-        var pervious = `http://localhost:3000/location/save/?limit=${limit}&page=${(page-1)}&access_token=${authorization}`;
-        let pagination = {};
-        if (saves && saves.length == limit && (page * limit !== count)) {
-          pagination.next = next;
-        }
-        if (page != 0) {
-          pagination.pervious = pervious;
-        }
-
-        res.send({
-          page: page + 1,
-          limit: limit,
-          saves: saves,
-          total: count,
-          pagination: pagination
-        })
-      })
+      res.send(data)
     }
   })
 }
@@ -70,36 +48,14 @@ function create(req, res, next) {
 }
 
 function findOne(req, res, next) {
-
-  UsersavedlocationModels.findById(req.params.saved_id, function(err, save) {
+  commonController.findOne(UsersavedlocationModels, {
+    id: req.params.saved_id,
+    type: "tag"
+  }, function(err, data) {
     if (err) {
-      return res.send(err);
+      res.send(500, err);
     } else {
-      if (!save) {
-        return res.send(500, {
-          message: "invalid save id"
-        })
-      } else {
-        if (save.placeid) {
-          debug("this is my placeid ", save.placeid)
-          googlemap.place({
-            placeid: save.placeid
-          }, function(err, location) {
-            if (!err) {
-              save["place"] = location
-              res.json(save);
-            } else {
-              res.send(err);
-            }
-          });
-
-        } else {
-          res.json(500, {
-            message: "no place id found"
-          });
-        }
-
-      }
+      res.json(data);
     }
   })
 }

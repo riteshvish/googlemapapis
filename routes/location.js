@@ -3,6 +3,7 @@ var router = express.Router();
 var LocationCtrl = require('./../controllers/location');
 var Tag = require('./../controllers/tag');
 var USLocation = require('./../controllers/usersavedlocation');
+var FVLocation = require('./../controllers/favorite');
 
 /* GET Location listing. */
 router.get('/', function(req, res, next) {
@@ -30,6 +31,12 @@ router.route('/save')
 
 router.route('/save/:saved_id')
   .get(USLocation.findOne).delete(USLocation.deletesaved);
+
+router.route('/favorite')
+  .post(FVLocation.create).get(FVLocation.findAll);
+
+router.route('/favorite/:favorite_id')
+  .get(FVLocation.findOne).delete(FVLocation.deletefavorited);
 
 
 

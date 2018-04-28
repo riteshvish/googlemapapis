@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var SaveSchema = new Schema({
+var FavoriteSchema = new Schema({
   username: {
     type: String,
     required: true
@@ -18,4 +18,4 @@ var SaveSchema = new Schema({
 });
 
 
-module.exports = mongoose.model('Usersavedlocation', SaveSchema);
+module.exports = mongoose.model('Favorite', FavoriteSchema);
