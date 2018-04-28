@@ -1,0 +1,10 @@
+/node_modules
+*.swp
+package-lock.json
+*.out
+*.log
+testing.js
+/views/*html;
+note.txt
+localtest.js
+routes/dump.js
