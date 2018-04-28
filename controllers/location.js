@@ -78,8 +78,13 @@ function findAll(req, res, next) {
 }
 
 function analytics(req, res, next) {
-  res({
-    message: "sd"
+  req.query.username = req.username;
+  LocationModels.analytics(req.query, function(err, data) {
+    if (err) {
+      res.send(500, err)
+    } else {
+      res.send(data)
+    }
   })
 }
 

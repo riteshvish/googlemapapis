@@ -23,21 +23,61 @@ LocationSchema.pre('save', function(next) {
 
 
 LocationSchema.statics.analytics = function(data, callback) {
-  Location.aggregate([{
-    $group: {
-      _id: 'text', //$region is the column name in collection
-      count: {
-        $sum: 1
+  var groupBy = {};
+  var filter = []
+  if (data.on && typeof data.on == "string") {
+    filter = data.on.split(",")
+    if (filter.indexOf("date") > -1) {
+      filter = filter.concat(["year", "month", "day"])
+    }
+    if (filter.indexOf("search") > -1) {
+      groupBy["search"] = "$text";
+    }
+    if (filter.indexOf("year") > -1) {
+      groupBy["year"] = {
+        "$year": "$created_at"
       }
     }
-  }], function(err, result) {
-    if (err) {
-      callback(err);
-    } else {
-      callback(null, result);
+    if (filter.indexOf("month") > -1) {
+      groupBy["month"] = {
+        "$month": "$created_at"
+      }
     }
-  });
+    if (filter.indexOf("day") > -1) {
+      groupBy["day"] = {
+        "$dayOfMonth": "$created_at"
+      }
+    }
+  } else {
+    groupBy["search"] = "$text";
+  }
+  if (Object.keys(groupBy).length == 0) {
+    groupBy["search"] = "$text";
+  }
+
+  Location.aggregate([{
+      $match: {
+        username: data.username
+      }
+    }, {
+      $group: {
+        // _id: '$text', //$region is the column name in collection
+        "_id": groupBy,
+        count: {
+          $sum: 1
+        }
+      }
+    }],
+    function(err, result) {
+      if (err) {
+        callback(err);
+      } else {
+        callback(null, result);
+      }
+    });
 }
+
+
 
 var Location = mongoose.model('Location', LocationSchema);
 

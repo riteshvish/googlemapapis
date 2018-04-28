@@ -32,7 +32,7 @@ function findAll(req, res, next) {
         var next = `http://localhost:3000/location/save/?limit=${limit}&page=p=${page+1}&access_token=${authorization}`;
         var pervious = `http://localhost:3000/location/save/?limit=${limit}&page=${(page-1)}&access_token=${authorization}`;
         let pagination = {};
-        if (saves && saves.length == limit) {
+        if (saves && saves.length == limit && (page * limit !== count)) {
           pagination.next = next;
         }
         if (page != 0) {
@@ -71,7 +71,7 @@ function create(req, res, next) {
 
 function findOne(req, res, next) {
 
-  UsersavedlocationModels.findById(req.params.save_id, function(err, save) {
+  UsersavedlocationModels.findById(req.params.saved_id, function(err, save) {
     if (err) {
       return res.send(err);
     } else {
@@ -107,7 +107,7 @@ function findOne(req, res, next) {
 
 function deletesaved(req, res, next) {
   UsersavedlocationModels.remove({
-    _id: req.params.save_id
+    _id: req.params.saved_id
   }, function(err, save) {
     if (err) {
       return res.send(err);
