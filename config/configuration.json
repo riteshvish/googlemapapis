@@ -1,0 +1,16 @@
+{
+  "mongo":{
+    "host":"localhost",
+    "port":"21707",
+    "database":"googlemapapi"
+  },
+  "redis":{
+    "host":"localhost",
+    "port":"6379"
+  },
+  "google":{
+    "mapkey":"AIzaSyC4iNZbRNs4DCFW0bdOMQIGb_ppZ3-bKWg"
+  },
+  "salt":"164rv6cl49hdvfz5hhlqhi94",
+  "hash":"164rv6cl49hdvfz5hhlqhi94"
+}
