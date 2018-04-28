@@ -11,7 +11,9 @@ var LocationSchema = new Schema({
   created_at: {
     type: Date,
     default: Date.now
-  }
+  },
+  query: Object,
+  type: String
 });
 
 
@@ -57,7 +59,8 @@ LocationSchema.statics.analytics = function(data, callback) {
 
   Location.aggregate([{
       $match: {
-        username: data.username
+        username: data.username,
+        type: "search"
       }
     }, {
       $group: {

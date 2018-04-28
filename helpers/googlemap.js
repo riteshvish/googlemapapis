@@ -54,5 +54,31 @@ module.exports = {
         });
       }
     })
+  },
+  placesNearby: function(data, cb) {
+    debug(data)
+    googleMapsClient.placesNearby(data, function(err, location) {
+      // console.log(err);
+      // console.log(location);
+      cb(err, location.json.results)
+    })
+    // .asPromise()
+    // .then(function(response) {
+    //   cb(null, response.json.results)
+    // })
+    // .catch(
+    //   cb({})
+    // );
+  },
+  placesRadar: function(data) {
+
+    googleMapsClient.placesRadar({
+      language: 'en',
+      location: [19.663280, 75.300293],
+      radius: 5000,
+      type: 'restaurant'
+    }, function(err, location) {
+      cb(err, location.json.results)
+    });
   }
 }

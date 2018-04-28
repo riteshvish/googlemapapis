@@ -68,8 +68,8 @@ module.exports = {
             });
 
           } else {
-            res.json(500, {
-              message: "no place id found"
+            cb({
+              message: "invalid placeid"
             });
           }
 

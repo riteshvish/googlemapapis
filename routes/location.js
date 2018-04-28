@@ -18,6 +18,9 @@ router.route('/search')
 router.route('/search/list')
   .get(LocationCtrl.findAll);
 
+router.route('/nearby')
+  .get(LocationCtrl.nearby);
+
 
 router.route('/tag')
   .post(Tag.create).get(Tag.findAll);

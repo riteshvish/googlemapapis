@@ -69,7 +69,7 @@ function deletefavorited(req, res, next) {
       return res.send(err);
     } else {
       return res.json({
-        message: 'Location Successfully Deleted'
+        message: 'Favorite Successfully Deleted'
       });
     }
   });

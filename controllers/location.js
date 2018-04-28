@@ -28,6 +28,7 @@ function search(req, res, next) {
       } else {
         locationModels.username = req.username;
         locationModels.searchText = searchText;
+        locationModels.type = "search";
         locationModels.save()
         return res.json(location);
       }
@@ -67,12 +68,51 @@ function analytics(req, res, next) {
   })
 }
 
+function nearby(req, res, next) {
+  console.log(req.params.type);
+  console.log(req.query);
+
+  var data = {
+    language: 'en',
+    location: [],
+    radius: 10000
+  }
+  if (req.query.lat && req.query.lng && req.query.type) {
+    data["opennow"] = req.query.opennow || false;
+    data["location"] = [req.query.lat, req.query.lng];
+    data["type"] = req.query.type;
+    googlemap.placesNearby(data, function(err, location) {
+      var locationModels = new LocationModels();
+      locationModels.username = req.username;
+      locationModels.searchText = data.type;
+      locationModels.type = "nearby";
+      locationModels.query = data;
+      locationModels.save()
+      res.send(location)
+    })
+  } else {
+    res.send(400, {
+      "message": "lat lng and type parma required"
+    })
+  }
+  // req.params.type.username = req.username;
+  // LocationModels.analytics(req.params.type, function(err, data) {
+  //   if (err) {
+  //     res.send(500, err)
+  //   } else {
+  //     res.send(data)
+  //   }
+  // })
+
+}
+
 
 ////////////////////////////////////////////
 
 var self = {
   findAll: findAll,
   analytics: analytics,
+  nearby: nearby,
   // findOne: findOne,
   // update: update,
   // deletebear: deletebear,

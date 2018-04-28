@@ -10,6 +10,35 @@
 			"description": "",
 			"item": [
 				{
+					"name": "User Signup",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"Mukul Vishwakarma\",\"email\":\"mukul@gmail.com\",\"password\":\"ritesh\",\"username\":\"mukulvish\"}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "User Login",
 					"request": {
 						"method": "POST",
@@ -21,7 +50,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\"username\":\"riteshvish2\",\"password\":\"ritesh\"}"
+							"raw": "{\"username\":\"mukulvish\",\"password\":\"ritesh\"}"
 						},
 						"url": {
 							"raw": "http://localhost:3000/user/login",
@@ -39,21 +68,19 @@
 					"response": []
 				},
 				{
-					"name": "User Signup",
+					"name": "Verify User Access Token",
 					"request": {
-						"method": "POST",
+						"method": "GET",
 						"header": [
 							{
-								"key": "Content-Type",
-								"value": "application/json"
+								"key": "Authorization",
+								"value": "c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f8343dc32c8714c87e667b6e47f3e2f8818a2664983cdb8a6b102027fb2b3761c3b177f273e4dbd1d100ccaf62d051c80cb831e3ac6d20baefa79aa3ffe3183b29db6d9071aced0044809e514cf90bf75abb",
+								"disabled": true
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\"name\":\"Ritesh Vishwakarma\",\"email\":\"rtrriteshvish@gmail.com\",\"password\":\"ritesh\",\"username\":\"riteshvish2\"}"
-						},
+						"body": {},
 						"url": {
-							"raw": "http://localhost:3000/user/signup",
+							"raw": "http://localhost:3000/user/verify?access_token=9ec39fec504f46ea372d5d8ae2ed47369002ca8d01482ea8283d8a46b154c9555f3de91b7dd2155180d0158b84fc2037f5a5e750b214f714a8d2a93df6c4935e8668d8d1a58a3c61d4802e1f3f69fc719f606b25deb4d4c00a0ed80dd9a573ddc4215cc6ea547355fd216e7dba257e12",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -61,7 +88,13 @@
 							"port": "3000",
 							"path": [
 								"user",
-								"signup"
+								"verify"
+							],
+							"query": [
+								{
+									"key": "access_token",
+									"value": "9ec39fec504f46ea372d5d8ae2ed47369002ca8d01482ea8283d8a46b154c9555f3de91b7dd2155180d0158b84fc2037f5a5e750b214f714a8d2a93df6c4935e8668d8d1a58a3c61d4802e1f3f69fc719f606b25deb4d4c00a0ed80dd9a573ddc4215cc6ea547355fd216e7dba257e12"
+								}
 							]
 						}
 					},
@@ -94,39 +127,6 @@
 					"response": []
 				},
 				{
-					"name": "Verify User Access Token",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f8343dc32c8714c87e667b6e47f3e2f8818a2664983cdb8a6b102027fb2b3761c3b177f273e4dbd1d100ccaf62d051c80cb831e3ac6d20baefa79aa3ffe3183b29db6d9071aced0044809e514cf90bf75abb",
-								"disabled": true
-							}
-						],
-						"body": {},
-						"url": {
-							"raw": "http://localhost:3000/user/verify?access_token=c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f83482664318dcae29f5c234de8bb384f0b3262dda6fc0a250283985a596753cbcc73037d2f160393a732ff2b16ed512fa306ced8d1eabfc64c5923557628b08ba394142683bcf3919b820c7ae111a785f23",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"user",
-								"verify"
-							],
-							"query": [
-								{
-									"key": "access_token",
-									"value": "c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f83482664318dcae29f5c234de8bb384f0b3262dda6fc0a250283985a596753cbcc73037d2f160393a732ff2b16ed512fa306ced8d1eabfc64c5923557628b08ba394142683bcf3919b820c7ae111a785f23"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "Analytics",
 					"request": {
 						"method": "GET",
@@ -139,7 +139,7 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "http://localhost:3000/user/analytics?on=date,search&access_token=c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f83461e4f1dafd6906c59e501f573042675d808174ec9642ec7badd9dd9aa386e6626212c0508518eca9a05c78b00ef8f82af683c0f06ee30f9c096d9183f1e57a86e7fddbece8eeae13da1057cf6c0a2d61",
+							"raw": "http://localhost:3000/user/analytics?on=date,search&access_token=9ec39fec504f46ea372d5d8ae2ed47369002ca8d01482ea8283d8a46b154c9555f3de91b7dd2155180d0158b84fc2037f5a5e750b214f714a8d2a93df6c4935e8668d8d1a58a3c61d4802e1f3f69fc719f606b25deb4d4c00a0ed80dd9a573ddc4215cc6ea547355fd216e7dba257e12",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -156,7 +156,7 @@
 								},
 								{
 									"key": "access_token",
-									"value": "c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f83461e4f1dafd6906c59e501f573042675d808174ec9642ec7badd9dd9aa386e6626212c0508518eca9a05c78b00ef8f82af683c0f06ee30f9c096d9183f1e57a86e7fddbece8eeae13da1057cf6c0a2d61"
+									"value": "9ec39fec504f46ea372d5d8ae2ed47369002ca8d01482ea8283d8a46b154c9555f3de91b7dd2155180d0158b84fc2037f5a5e750b214f714a8d2a93df6c4935e8668d8d1a58a3c61d4802e1f3f69fc719f606b25deb4d4c00a0ed80dd9a573ddc4215cc6ea547355fd216e7dba257e12"
 								}
 							]
 						}
@@ -189,7 +189,7 @@
 							"raw": "{\"name\":\"Office\",\"place_id\":\"ChIJb7exV_SW5zsRJr1FpDxG3zU\"}"
 						},
 						"url": {
-							"raw": "http://localhost:3000/location/search?text=ulhasnagar&access_token=c8a087f983b479947bea566fa691d7c5a9925578c26f5929521213947c8da137f33e19c4de21bec3913d2d006b008641f6dc9a1dd2d57e0170beda728af63ce2e2d14e3b9bce9672f2ffe53acc25c60cc99f0e0547177d4391852d5efbbf57446953a859aeffb99e3c26a660cd588cdf",
+							"raw": "http://localhost:3000/location/search?text=ulhasnagar&access_token=9ec39fec504f46ea372d5d8ae2ed47369002ca8d01482ea8283d8a46b154c9555f3de91b7dd2155180d0158b84fc2037f5a5e750b214f714a8d2a93df6c4935e8668d8d1a58a3c61d4802e1f3f69fc719f606b25deb4d4c00a0ed80dd9a573ddc4215cc6ea547355fd216e7dba257e12",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -206,7 +206,7 @@
 								},
 								{
 									"key": "access_token",
-									"value": "c8a087f983b479947bea566fa691d7c5a9925578c26f5929521213947c8da137f33e19c4de21bec3913d2d006b008641f6dc9a1dd2d57e0170beda728af63ce2e2d14e3b9bce9672f2ffe53acc25c60cc99f0e0547177d4391852d5efbbf57446953a859aeffb99e3c26a660cd588cdf"
+									"value": "9ec39fec504f46ea372d5d8ae2ed47369002ca8d01482ea8283d8a46b154c9555f3de91b7dd2155180d0158b84fc2037f5a5e750b214f714a8d2a93df6c4935e8668d8d1a58a3c61d4802e1f3f69fc719f606b25deb4d4c00a0ed80dd9a573ddc4215cc6ea547355fd216e7dba257e12"
 								}
 							]
 						}
@@ -220,7 +220,7 @@
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": "http://localhost:3000/location/search/list?access_token=c8a087f983b479947bea566fa691d7c5a9925578c26f5929521213947c8da137f33e19c4de21bec3913d2d006b008641f6dc9a1dd2d57e0170beda728af63ce2e2d14e3b9bce9672f2ffe53acc25c60cc99f0e0547177d4391852d5efbbf57446953a859aeffb99e3c26a660cd588cdf",
+							"raw": "http://localhost:3000/location/search/list/?access_token=9ec39fec504f46ea372d5d8ae2ed47369002ca8d01482ea8283d8a46b154c9555f3de91b7dd2155180d0158b84fc2037f5a5e750b214f714a8d2a93df6c4935e8668d8d1a58a3c61d4802e1f3f69fc719f606b25deb4d4c00a0ed80dd9a573ddc4215cc6ea547355fd216e7dba257e12",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -229,12 +229,13 @@
 							"path": [
 								"location",
 								"search",
-								"list"
+								"list",
+								""
 							],
 							"query": [
 								{
 									"key": "access_token",
-									"value": "c8a087f983b479947bea566fa691d7c5a9925578c26f5929521213947c8da137f33e19c4de21bec3913d2d006b008641f6dc9a1dd2d57e0170beda728af63ce2e2d14e3b9bce9672f2ffe53acc25c60cc99f0e0547177d4391852d5efbbf57446953a859aeffb99e3c26a660cd588cdf"
+									"value": "9ec39fec504f46ea372d5d8ae2ed47369002ca8d01482ea8283d8a46b154c9555f3de91b7dd2155180d0158b84fc2037f5a5e750b214f714a8d2a93df6c4935e8668d8d1a58a3c61d4802e1f3f69fc719f606b25deb4d4c00a0ed80dd9a573ddc4215cc6ea547355fd216e7dba257e12"
 								}
 							]
 						}
@@ -248,7 +249,7 @@
 			"description": "",
 			"item": [
 				{
-					"name": "Delete Taged Location",
+					"name": "Add Taged Location",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -262,7 +263,7 @@
 							"raw": "{\"name\":\"Lower parel Office\",\"placeid\":\"asfasdf\"}"
 						},
 						"url": {
-							"raw": "http://localhost:3000/location/tag?access_token=c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f83482664318dcae29f5c234de8bb384f0b3262dda6fc0a250283985a596753cbcc73037d2f160393a732ff2b16ed512fa306ced8d1eabfc64c5923557628b08ba394142683bcf3919b820c7ae111a785f23",
+							"raw": "http://localhost:3000/location/tag?access_token=9ec39fec504f46ea372d5d8ae2ed47369002ca8d01482ea8283d8a46b154c9555f3de91b7dd2155180d0158b84fc2037f5a5e750b214f714a8d2a93df6c4935e8668d8d1a58a3c61d4802e1f3f69fc719f606b25deb4d4c00a0ed80dd9a573ddc4215cc6ea547355fd216e7dba257e12",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -275,7 +276,7 @@
 							"query": [
 								{
 									"key": "access_token",
-									"value": "c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f83482664318dcae29f5c234de8bb384f0b3262dda6fc0a250283985a596753cbcc73037d2f160393a732ff2b16ed512fa306ced8d1eabfc64c5923557628b08ba394142683bcf3919b820c7ae111a785f23"
+									"value": "9ec39fec504f46ea372d5d8ae2ed47369002ca8d01482ea8283d8a46b154c9555f3de91b7dd2155180d0158b84fc2037f5a5e750b214f714a8d2a93df6c4935e8668d8d1a58a3c61d4802e1f3f69fc719f606b25deb4d4c00a0ed80dd9a573ddc4215cc6ea547355fd216e7dba257e12"
 								}
 							]
 						}
@@ -295,7 +296,7 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "http://localhost:3000/location/tag?access_token=c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f83482664318dcae29f5c234de8bb384f0b3262dda6fc0a250283985a596753cbcc73037d2f160393a732ff2b16ed512fa306ced8d1eabfc64c5923557628b08ba394142683bcf3919b820c7ae111a785f23",
+							"raw": "http://localhost:3000/location/tag?access_token=9ec39fec504f46ea372d5d8ae2ed47369002ca8d01482ea8283d8a46b154c9555f3de91b7dd2155180d0158b84fc2037f5a5e750b214f714a8d2a93df6c4935e8668d8d1a58a3c61d4802e1f3f69fc719f606b25deb4d4c00a0ed80dd9a573ddc4215cc6ea547355fd216e7dba257e12",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -308,7 +309,7 @@
 							"query": [
 								{
 									"key": "access_token",
-									"value": "c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f83482664318dcae29f5c234de8bb384f0b3262dda6fc0a250283985a596753cbcc73037d2f160393a732ff2b16ed512fa306ced8d1eabfc64c5923557628b08ba394142683bcf3919b820c7ae111a785f23"
+									"value": "9ec39fec504f46ea372d5d8ae2ed47369002ca8d01482ea8283d8a46b154c9555f3de91b7dd2155180d0158b84fc2037f5a5e750b214f714a8d2a93df6c4935e8668d8d1a58a3c61d4802e1f3f69fc719f606b25deb4d4c00a0ed80dd9a573ddc4215cc6ea547355fd216e7dba257e12"
 								}
 							]
 						}
@@ -326,7 +327,7 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f83482664318dcae29f5c234de8bb384f0b3262dda6fc0a250283985a596753cbcc73037d2f160393a732ff2b16ed512fa306ced8d1eabfc64c5923557628b08ba394142683bcf3919b820c7ae111a785f23"
+								"value": "9ec39fec504f46ea372d5d8ae2ed47369002ca8d01482ea8283d8a46b154c9555f3de91b7dd2155180d0158b84fc2037f5a5e750b214f714a8d2a93df6c4935e8668d8d1a58a3c61d4802e1f3f69fc719f606b25deb4d4c00a0ed80dd9a573ddc4215cc6ea547355fd216e7dba257e12"
 							}
 						],
 						"body": {
@@ -334,7 +335,7 @@
 							"raw": "{\"name\":\"Lower parel Office\"}"
 						},
 						"url": {
-							"raw": "http://localhost:3000/location/tag/5ae4500c7b0e893120117f24",
+							"raw": "http://localhost:3000/location/tag/5ae4af39e1c3f54f2a27ca0a",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -343,7 +344,7 @@
 							"path": [
 								"location",
 								"tag",
-								"5ae4500c7b0e893120117f24"
+								"5ae4af39e1c3f54f2a27ca0a"
 							]
 						}
 					},
@@ -360,7 +361,7 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f83482664318dcae29f5c234de8bb384f0b3262dda6fc0a250283985a596753cbcc73037d2f160393a732ff2b16ed512fa306ced8d1eabfc64c5923557628b08ba394142683bcf3919b820c7ae111a785f23"
+								"value": "9ec39fec504f46ea372d5d8ae2ed47369002ca8d01482ea8283d8a46b154c9555f3de91b7dd2155180d0158b84fc2037f5a5e750b214f714a8d2a93df6c4935e8668d8d1a58a3c61d4802e1f3f69fc719f606b25deb4d4c00a0ed80dd9a573ddc4215cc6ea547355fd216e7dba257e12"
 							}
 						],
 						"body": {
@@ -368,7 +369,7 @@
 							"raw": "{\"name\":\"Ritesh Office\"}"
 						},
 						"url": {
-							"raw": "http://localhost:3000/location/tag/5ae4500c7b0e893120117f24",
+							"raw": "http://localhost:3000/location/tag/5ae4af39e1c3f54f2a27ca0a",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -377,7 +378,7 @@
 							"path": [
 								"location",
 								"tag",
-								"5ae4500c7b0e893120117f24"
+								"5ae4af39e1c3f54f2a27ca0a"
 							]
 						}
 					},
@@ -394,7 +395,7 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f83482664318dcae29f5c234de8bb384f0b3262dda6fc0a250283985a596753cbcc73037d2f160393a732ff2b16ed512fa306ced8d1eabfc64c5923557628b08ba394142683bcf3919b820c7ae111a785f23"
+								"value": "9ec39fec504f46ea372d5d8ae2ed47369002ca8d01482ea8283d8a46b154c9555f3de91b7dd2155180d0158b84fc2037f5a5e750b214f714a8d2a93df6c4935e8668d8d1a58a3c61d4802e1f3f69fc719f606b25deb4d4c00a0ed80dd9a573ddc4215cc6ea547355fd216e7dba257e12"
 							}
 						],
 						"body": {
@@ -402,7 +403,7 @@
 							"raw": "{\"name\":\"Lower parel Office\"}"
 						},
 						"url": {
-							"raw": "http://localhost:3000/location/tag/5ae47e410366962b6044be74",
+							"raw": "http://localhost:3000/location/tag/5ae4af39e1c3f54f2a27ca0a",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -411,7 +412,7 @@
 							"path": [
 								"location",
 								"tag",
-								"5ae47e410366962b6044be74"
+								"5ae4af39e1c3f54f2a27ca0a"
 							]
 						}
 					},
@@ -555,6 +556,157 @@
 							"path": [
 								"location",
 								"save",
+								"5ae46e89b9cabc197b8b6a6d",
+								""
+							],
+							"query": [
+								{
+									"key": "access_token",
+									"value": "c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f834ad5b566cfacc5809f5f3c2ff0240c1530c730bde946272859048a936b2e75832ed52f672ee17ec9a6b342013662b244fd27e4231f0de84649e54b6587105e82467343fa0404625793d7dc0bdeaf75ae1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Favorite Location",
+			"description": "",
+			"item": [
+				{
+					"name": "Favorite User Location",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"placeid\":\"ChIJ1RH6XprI5zsR-XiacqeOcpA\"}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/location/favorite/?access_token=c8a087f983b479947bea566fa691d7c5a9925578c26f5929521213947c8da13767ec922106910119ba71f8f96525175adadbbea8e1cefe2cbe34c9ab01493431114226615e59d4dcdc71b617fa8e836a25d929bcd6e6c125f7d29fa7f9434f6af855212f3e9870b5ab1310d4818e1417",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"location",
+								"favorite",
+								""
+							],
+							"query": [
+								{
+									"key": "access_token",
+									"value": "c8a087f983b479947bea566fa691d7c5a9925578c26f5929521213947c8da13767ec922106910119ba71f8f96525175adadbbea8e1cefe2cbe34c9ab01493431114226615e59d4dcdc71b617fa8e836a25d929bcd6e6c125f7d29fa7f9434f6af855212f3e9870b5ab1310d4818e1417"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Favorite Location",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"Lower parel Office\"}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/location/favorite/5ae46cfca3b9b817bae901d9?access_token=c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f834ad5b566cfacc5809f5f3c2ff0240c1530c730bde946272859048a936b2e75832ed52f672ee17ec9a6b342013662b244fd27e4231f0de84649e54b6587105e82467343fa0404625793d7dc0bdeaf75ae1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"location",
+								"favorite",
+								"5ae46cfca3b9b817bae901d9"
+							],
+							"query": [
+								{
+									"key": "access_token",
+									"value": "c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f834ad5b566cfacc5809f5f3c2ff0240c1530c730bde946272859048a936b2e75832ed52f672ee17ec9a6b342013662b244fd27e4231f0de84649e54b6587105e82467343fa0404625793d7dc0bdeaf75ae1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List of Favorite Location",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"Lower parel Office\"}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/location/favorite/?access_token=c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f834ad5b566cfacc5809f5f3c2ff0240c1530c730bde946272859048a936b2e75832ed52f672ee17ec9a6b342013662b244fd27e4231f0de84649e54b6587105e82467343fa0404625793d7dc0bdeaf75ae1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"location",
+								"favorite",
+								""
+							],
+							"query": [
+								{
+									"key": "access_token",
+									"value": "c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f834ad5b566cfacc5809f5f3c2ff0240c1530c730bde946272859048a936b2e75832ed52f672ee17ec9a6b342013662b244fd27e4231f0de84649e54b6587105e82467343fa0404625793d7dc0bdeaf75ae1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Details of Favorite Location",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"Lower parel Office\"}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/location/favorite/5ae46e89b9cabc197b8b6a6d/?access_token=c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f834ad5b566cfacc5809f5f3c2ff0240c1530c730bde946272859048a936b2e75832ed52f672ee17ec9a6b342013662b244fd27e4231f0de84649e54b6587105e82467343fa0404625793d7dc0bdeaf75ae1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"location",
+								"favorite",
 								"5ae46e89b9cabc197b8b6a6d",
 								""
 							],
