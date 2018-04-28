@@ -1,461 +1,574 @@
 {
-	"id": "12802e9b-2830-d3d6-6f29-c5c5a8d2e6a6",
-	"name": "google-api",
-	"description": "",
-	"order": [],
-	"folders": [
+	"info": {
+		"_postman_id": "363ad48d-105d-471a-baa2-665b815292a2",
+		"name": "google-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "users",
+			"description": "",
+			"item": [
+				{
+					"name": "User Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\":\"riteshvish2\",\"password\":\"ritesh\"}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Signup",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"Ritesh Vishwakarma\",\"email\":\"rtrriteshvish@gmail.com\",\"password\":\"ritesh\",\"username\":\"riteshvish2\"}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Logout",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f834b2fd45cb69bb3f06006adeb2e48548ca91187f2c194b5dfb3541caf7c890331b53bfe13ca6800ca7438fd8734684aa9aa00b897b01bc3a9096a119ea571480aefd3845c0cd9799e70851972d695c0525"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:3000/user/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify User Access Token",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f8343dc32c8714c87e667b6e47f3e2f8818a2664983cdb8a6b102027fb2b3761c3b177f273e4dbd1d100ccaf62d051c80cb831e3ac6d20baefa79aa3ffe3183b29db6d9071aced0044809e514cf90bf75abb",
+								"disabled": true
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:3000/user/verify?access_token=c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f83482664318dcae29f5c234de8bb384f0b3262dda6fc0a250283985a596753cbcc73037d2f160393a732ff2b16ed512fa306ced8d1eabfc64c5923557628b08ba394142683bcf3919b820c7ae111a785f23",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"verify"
+							],
+							"query": [
+								{
+									"key": "access_token",
+									"value": "c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f83482664318dcae29f5c234de8bb384f0b3262dda6fc0a250283985a596753cbcc73037d2f160393a732ff2b16ed512fa306ced8d1eabfc64c5923557628b08ba394142683bcf3919b820c7ae111a785f23"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Analytics",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f8343dc32c8714c87e667b6e47f3e2f8818a2664983cdb8a6b102027fb2b3761c3b177f273e4dbd1d100ccaf62d051c80cb831e3ac6d20baefa79aa3ffe3183b29db6d9071aced0044809e514cf90bf75abb",
+								"disabled": true
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:3000/user/analytics?on=date,search&access_token=c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f83461e4f1dafd6906c59e501f573042675d808174ec9642ec7badd9dd9aa386e6626212c0508518eca9a05c78b00ef8f82af683c0f06ee30f9c096d9183f1e57a86e7fddbece8eeae13da1057cf6c0a2d61",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"analytics"
+							],
+							"query": [
+								{
+									"key": "on",
+									"value": "date,search"
+								},
+								{
+									"key": "access_token",
+									"value": "c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f83461e4f1dafd6906c59e501f573042675d808174ec9642ec7badd9dd9aa386e6626212c0508518eca9a05c78b00ef8f82af683c0f06ee30f9c096d9183f1e57a86e7fddbece8eeae13da1057cf6c0a2d61"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
 		{
 			"name": "location",
 			"description": "",
-			"collectionId": "12802e9b-2830-d3d6-6f29-c5c5a8d2e6a6",
-			"order": [
-				"2dd06b19-397c-9f51-d84c-0b6b4d2787d9",
-				"7e3fedee-7ffc-ca3d-0830-1ef6efb32b73"
-			],
-			"owner": 0,
-			"folders_order": [],
-			"id": "3020be2e-db5f-ca99-e8ca-336185f4600e"
+			"item": [
+				{
+					"name": "Search Location",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"Office\",\"place_id\":\"ChIJb7exV_SW5zsRJr1FpDxG3zU\"}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/location/search?text=ulhasnagar&access_token=c8a087f983b479947bea566fa691d7c5a9925578c26f5929521213947c8da137f33e19c4de21bec3913d2d006b008641f6dc9a1dd2d57e0170beda728af63ce2e2d14e3b9bce9672f2ffe53acc25c60cc99f0e0547177d4391852d5efbbf57446953a859aeffb99e3c26a660cd588cdf",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"location",
+								"search"
+							],
+							"query": [
+								{
+									"key": "text",
+									"value": "ulhasnagar"
+								},
+								{
+									"key": "access_token",
+									"value": "c8a087f983b479947bea566fa691d7c5a9925578c26f5929521213947c8da137f33e19c4de21bec3913d2d006b008641f6dc9a1dd2d57e0170beda728af63ce2e2d14e3b9bce9672f2ffe53acc25c60cc99f0e0547177d4391852d5efbbf57446953a859aeffb99e3c26a660cd588cdf"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Search list with pagination",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:3000/location/search/list?access_token=c8a087f983b479947bea566fa691d7c5a9925578c26f5929521213947c8da137f33e19c4de21bec3913d2d006b008641f6dc9a1dd2d57e0170beda728af63ce2e2d14e3b9bce9672f2ffe53acc25c60cc99f0e0547177d4391852d5efbbf57446953a859aeffb99e3c26a660cd588cdf",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"location",
+								"search",
+								"list"
+							],
+							"query": [
+								{
+									"key": "access_token",
+									"value": "c8a087f983b479947bea566fa691d7c5a9925578c26f5929521213947c8da137f33e19c4de21bec3913d2d006b008641f6dc9a1dd2d57e0170beda728af63ce2e2d14e3b9bce9672f2ffe53acc25c60cc99f0e0547177d4391852d5efbbf57446953a859aeffb99e3c26a660cd588cdf"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		},
 		{
 			"name": "tag",
 			"description": "",
-			"collectionId": "12802e9b-2830-d3d6-6f29-c5c5a8d2e6a6",
-			"order": [
-				"f516a49f-9bde-f13a-a040-2852beffdaff",
-				"8ccb7df3-6e68-ab00-11a3-ff6825607041",
-				"04bf7b13-2d7c-ce0b-3867-72aad7a5b9a0",
-				"6e8a741f-7ff5-9799-dba1-803819722c81",
-				"c1cd158e-6d4e-bed9-4aa0-acc1820288a1"
-			],
-			"owner": 0,
-			"folders_order": [],
-			"id": "5e40f29d-3bf3-ab08-3b60-08927f6dd77c"
-		},
-		{
-			"name": "users",
-			"description": "",
-			"collectionId": "12802e9b-2830-d3d6-6f29-c5c5a8d2e6a6",
-			"order": [
-				"ad2a2ae6-dadd-4c99-c427-8ac8332196b8",
-				"e0f18395-ab4e-42ed-d543-0e8b566493c0",
-				"5578a36c-9b97-5e28-099d-1eeea4d60f13",
-				"00b232f5-293d-d556-7205-c0f78d065ece"
-			],
-			"owner": 0,
-			"folders_order": [],
-			"id": "3393151e-d118-8c87-bf6e-32ca23980526"
-		}
-	],
-	"folders_order": [
-		"3393151e-d118-8c87-bf6e-32ca23980526",
-		"3020be2e-db5f-ca99-e8ca-336185f4600e",
-		"5e40f29d-3bf3-ab08-3b60-08927f6dd77c"
-	],
-	"timestamp": 1524683104491,
-	"owner": 0,
-	"public": false,
-	"requests": [
-		{
-			"id": "00b232f5-293d-d556-7205-c0f78d065ece",
-			"headers": "//Authorization: c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f8343dc32c8714c87e667b6e47f3e2f8818a2664983cdb8a6b102027fb2b3761c3b177f273e4dbd1d100ccaf62d051c80cb831e3ac6d20baefa79aa3ffe3183b29db6d9071aced0044809e514cf90bf75abb\n",
-			"headerData": [
+			"item": [
 				{
-					"key": "Authorization",
-					"value": "c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f8343dc32c8714c87e667b6e47f3e2f8818a2664983cdb8a6b102027fb2b3761c3b177f273e4dbd1d100ccaf62d051c80cb831e3ac6d20baefa79aa3ffe3183b29db6d9071aced0044809e514cf90bf75abb",
-					"description": "",
-					"enabled": false
-				}
-			],
-			"url": "http://localhost:3000/user/verify?access_token=c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f83461e4f1dafd6906c59e501f573042675d808174ec9642ec7badd9dd9aa386e6626212c0508518eca9a05c78b00ef8f82af683c0f06ee30f9c096d9183f1e57a86e7fddbece8eeae13da1057cf6c0a2d61",
-			"folder": "3393151e-d118-8c87-bf6e-32ca23980526",
-			"queryParams": [
-				{
-					"key": "access_token",
-					"value": "c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f83461e4f1dafd6906c59e501f573042675d808174ec9642ec7badd9dd9aa386e6626212c0508518eca9a05c78b00ef8f82af683c0f06ee30f9c096d9183f1e57a86e7fddbece8eeae13da1057cf6c0a2d61",
-					"equals": true,
-					"description": "",
-					"enabled": true
-				}
-			],
-			"preRequestScript": null,
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": null,
-			"dataMode": "params",
-			"version": 2,
-			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1524911915649,
-			"name": "http://localhost:3000/user/verify?access_token=",
-			"description": "",
-			"collectionId": "12802e9b-2830-d3d6-6f29-c5c5a8d2e6a6",
-			"responses": []
-		},
-		{
-			"id": "04bf7b13-2d7c-ce0b-3867-72aad7a5b9a0",
-			"headers": "Content-Type: application/json\nAuthorization: c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f83421eccd48153a681bf5c8ad66a6fc49a2a2ca6e1f10742b29dcebd2b828c2b01dc7eedd92965132214f1017265c5d699dd6aad6f86d667624af8fcaa61f7c4ab5c99162678f6f022f08a872c4d370ddb4\n",
-			"headerData": [
-				{
-					"key": "Content-Type",
-					"value": "application/json",
-					"description": "",
-					"enabled": true
+					"name": "Delete Taged Location",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"Lower parel Office\",\"placeid\":\"asfasdf\"}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/location/tag?access_token=c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f83482664318dcae29f5c234de8bb384f0b3262dda6fc0a250283985a596753cbcc73037d2f160393a732ff2b16ed512fa306ced8d1eabfc64c5923557628b08ba394142683bcf3919b820c7ae111a785f23",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"location",
+								"tag"
+							],
+							"query": [
+								{
+									"key": "access_token",
+									"value": "c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f83482664318dcae29f5c234de8bb384f0b3262dda6fc0a250283985a596753cbcc73037d2f160393a732ff2b16ed512fa306ced8d1eabfc64c5923557628b08ba394142683bcf3919b820c7ae111a785f23"
+								}
+							]
+						}
+					},
+					"response": []
 				},
 				{
-					"key": "Authorization",
-					"value": "c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f83421eccd48153a681bf5c8ad66a6fc49a2a2ca6e1f10742b29dcebd2b828c2b01dc7eedd92965132214f1017265c5d699dd6aad6f86d667624af8fcaa61f7c4ab5c99162678f6f022f08a872c4d370ddb4",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "http://localhost:3000/location/tag/",
-			"folder": "5e40f29d-3bf3-ab08-3b60-08927f6dd77c",
-			"queryParams": [],
-			"preRequestScript": null,
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": [],
-			"dataMode": "raw",
-			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1524911637914,
-			"name": "Get Tag Details",
-			"description": "",
-			"collectionId": "12802e9b-2830-d3d6-6f29-c5c5a8d2e6a6",
-			"responses": [],
-			"rawModeData": "{\"name\":\"Lower parel Office\"}"
-		},
-		{
-			"id": "2dd06b19-397c-9f51-d84c-0b6b4d2787d9",
-			"headers": "//Authorization: \nContent-Type: application/json\n",
-			"headerData": [
-				{
-					"key": "Authorization",
-					"value": "",
-					"description": "",
-					"enabled": false
+					"name": "Get All the User Tags",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f83472f5371eb081b3167d1c8eb0e269048f6667648a545bfbc2ba81d78b1d4d9bd1b48ee5e64fa8dce1e3c645db275115268da46229689bdc5ab0edb5cce1750da6e8c660efb90e74199a6da498f12f74c9",
+								"disabled": true
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:3000/location/tag?access_token=c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f83482664318dcae29f5c234de8bb384f0b3262dda6fc0a250283985a596753cbcc73037d2f160393a732ff2b16ed512fa306ced8d1eabfc64c5923557628b08ba394142683bcf3919b820c7ae111a785f23",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"location",
+								"tag"
+							],
+							"query": [
+								{
+									"key": "access_token",
+									"value": "c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f83482664318dcae29f5c234de8bb384f0b3262dda6fc0a250283985a596753cbcc73037d2f160393a732ff2b16ed512fa306ced8d1eabfc64c5923557628b08ba394142683bcf3919b820c7ae111a785f23"
+								}
+							]
+						}
+					},
+					"response": []
 				},
 				{
-					"key": "Content-Type",
-					"value": "application/json",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "http://localhost:3000/location/search?text=kurla&access_token=c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f83461e4f1dafd6906c59e501f573042675d808174ec9642ec7badd9dd9aa386e6626212c0508518eca9a05c78b00ef8f82af683c0f06ee30f9c096d9183f1e57a86e7fddbece8eeae13da1057cf6c0a2d61",
-			"folder": "3020be2e-db5f-ca99-e8ca-336185f4600e",
-			"queryParams": [
-				{
-					"key": "text",
-					"value": "kurla",
-					"equals": true,
-					"description": "",
-					"enabled": true
+					"name": "Get Tag Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f83482664318dcae29f5c234de8bb384f0b3262dda6fc0a250283985a596753cbcc73037d2f160393a732ff2b16ed512fa306ced8d1eabfc64c5923557628b08ba394142683bcf3919b820c7ae111a785f23"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"Lower parel Office\"}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/location/tag/5ae4500c7b0e893120117f24",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"location",
+								"tag",
+								"5ae4500c7b0e893120117f24"
+							]
+						}
+					},
+					"response": []
 				},
 				{
-					"key": "access_token",
-					"value": "c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f83461e4f1dafd6906c59e501f573042675d808174ec9642ec7badd9dd9aa386e6626212c0508518eca9a05c78b00ef8f82af683c0f06ee30f9c096d9183f1e57a86e7fddbece8eeae13da1057cf6c0a2d61",
-					"equals": true,
-					"description": "",
-					"enabled": true
-				}
-			],
-			"preRequestScript": null,
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": [],
-			"dataMode": "raw",
-			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1524911854854,
-			"name": "Search Location",
-			"description": "",
-			"collectionId": "12802e9b-2830-d3d6-6f29-c5c5a8d2e6a6",
-			"responses": [],
-			"rawModeData": "{\"name\":\"Office\",\"place_id\":\"ChIJb7exV_SW5zsRJr1FpDxG3zU\"}"
-		},
-		{
-			"id": "5578a36c-9b97-5e28-099d-1eeea4d60f13",
-			"headers": "Authorization: c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f834b2fd45cb69bb3f06006adeb2e48548ca91187f2c194b5dfb3541caf7c890331b53bfe13ca6800ca7438fd8734684aa9aa00b897b01bc3a9096a119ea571480aefd3845c0cd9799e70851972d695c0525\n",
-			"headerData": [
-				{
-					"key": "Authorization",
-					"value": "c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f834b2fd45cb69bb3f06006adeb2e48548ca91187f2c194b5dfb3541caf7c890331b53bfe13ca6800ca7438fd8734684aa9aa00b897b01bc3a9096a119ea571480aefd3845c0cd9799e70851972d695c0525",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "http://localhost:3000/user/logout",
-			"folder": "3393151e-d118-8c87-bf6e-32ca23980526",
-			"queryParams": [],
-			"preRequestScript": null,
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "PUT",
-			"data": null,
-			"dataMode": "params",
-			"version": 2,
-			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1524911913056,
-			"name": "http://localhost:3000/user/logout",
-			"description": "",
-			"collectionId": "12802e9b-2830-d3d6-6f29-c5c5a8d2e6a6",
-			"responses": []
-		},
-		{
-			"id": "6e8a741f-7ff5-9799-dba1-803819722c81",
-			"headers": "Content-Type: application/json\nAuthorization: c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f83421eccd48153a681bf5c8ad66a6fc49a2a2ca6e1f10742b29dcebd2b828c2b01dc7eedd92965132214f1017265c5d699dd6aad6f86d667624af8fcaa61f7c4ab5c99162678f6f022f08a872c4d370ddb4\n",
-			"headerData": [
-				{
-					"key": "Content-Type",
-					"value": "application/json",
-					"description": "",
-					"enabled": true
+					"name": "Set Tag on Perticular Location",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f83482664318dcae29f5c234de8bb384f0b3262dda6fc0a250283985a596753cbcc73037d2f160393a732ff2b16ed512fa306ced8d1eabfc64c5923557628b08ba394142683bcf3919b820c7ae111a785f23"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"Ritesh Office\"}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/location/tag/5ae4500c7b0e893120117f24",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"location",
+								"tag",
+								"5ae4500c7b0e893120117f24"
+							]
+						}
+					},
+					"response": []
 				},
 				{
-					"key": "Authorization",
-					"value": "c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f83421eccd48153a681bf5c8ad66a6fc49a2a2ca6e1f10742b29dcebd2b828c2b01dc7eedd92965132214f1017265c5d699dd6aad6f86d667624af8fcaa61f7c4ab5c99162678f6f022f08a872c4d370ddb4",
-					"description": "",
-					"enabled": true
+					"name": "Update Tag Details",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f83482664318dcae29f5c234de8bb384f0b3262dda6fc0a250283985a596753cbcc73037d2f160393a732ff2b16ed512fa306ced8d1eabfc64c5923557628b08ba394142683bcf3919b820c7ae111a785f23"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"Lower parel Office\"}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/location/tag/5ae47e410366962b6044be74",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"location",
+								"tag",
+								"5ae47e410366962b6044be74"
+							]
+						}
+					},
+					"response": []
 				}
-			],
-			"url": "http://localhost:3000/location/tag/",
-			"folder": "5e40f29d-3bf3-ab08-3b60-08927f6dd77c",
-			"queryParams": [],
-			"preRequestScript": null,
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": [],
-			"dataMode": "raw",
-			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1524911637914,
-			"name": "Update Tag Details",
-			"description": "",
-			"collectionId": "12802e9b-2830-d3d6-6f29-c5c5a8d2e6a6",
-			"responses": [],
-			"isFromCollection": true,
-			"collectionRequestId": "04bf7b13-2d7c-ce0b-3867-72aad7a5b9a0",
-			"rawModeData": "{\"name\":\"Lower parel Office\"}"
+			]
 		},
 		{
-			"id": "7e3fedee-7ffc-ca3d-0830-1ef6efb32b73",
-			"headers": "",
-			"headerData": [],
-			"url": "http://localhost:3000/location/search/list?access_token=c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f83461e4f1dafd6906c59e501f573042675d808174ec9642ec7badd9dd9aa386e6626212c0508518eca9a05c78b00ef8f82af683c0f06ee30f9c096d9183f1e57a86e7fddbece8eeae13da1057cf6c0a2d61",
-			"folder": "3020be2e-db5f-ca99-e8ca-336185f4600e",
-			"queryParams": [
-				{
-					"key": "access_token",
-					"value": "c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f83461e4f1dafd6906c59e501f573042675d808174ec9642ec7badd9dd9aa386e6626212c0508518eca9a05c78b00ef8f82af683c0f06ee30f9c096d9183f1e57a86e7fddbece8eeae13da1057cf6c0a2d61",
-					"equals": true,
-					"description": "",
-					"enabled": true
-				}
-			],
-			"preRequestScript": null,
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": null,
-			"dataMode": "params",
-			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1524911904905,
-			"name": "http://localhost:3000/location/search",
+			"name": "Save Location",
 			"description": "",
-			"collectionId": "12802e9b-2830-d3d6-6f29-c5c5a8d2e6a6",
-			"responses": []
-		},
-		{
-			"id": "8ccb7df3-6e68-ab00-11a3-ff6825607041",
-			"headers": "Authorization: c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f83472f5371eb081b3167d1c8eb0e269048f6667648a545bfbc2ba81d78b1d4d9bd1b48ee5e64fa8dce1e3c645db275115268da46229689bdc5ab0edb5cce1750da6e8c660efb90e74199a6da498f12f74c9\n",
-			"headerData": [
+			"item": [
 				{
-					"key": "Authorization",
-					"value": "c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f83472f5371eb081b3167d1c8eb0e269048f6667648a545bfbc2ba81d78b1d4d9bd1b48ee5e64fa8dce1e3c645db275115268da46229689bdc5ab0edb5cce1750da6e8c660efb90e74199a6da498f12f74c9",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "http://localhost:3000/location/tag/5ae423673bec166b5c70aac8?access_token=c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f83472f5371eb081b3167d1c8eb0e269048f6667648a545bfbc2ba81d78b1d4d9bd1b48ee5e64fa8dce1e3c645db275115268da46229689bdc5ab0edb5cce1750da6e8c660efb90e74199a6da498f12f74c9",
-			"queryParams": [
-				{
-					"key": "access_token",
-					"value": "c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f83472f5371eb081b3167d1c8eb0e269048f6667648a545bfbc2ba81d78b1d4d9bd1b48ee5e64fa8dce1e3c645db275115268da46229689bdc5ab0edb5cce1750da6e8c660efb90e74199a6da498f12f74c9",
-					"equals": true,
-					"description": "",
-					"enabled": true
-				}
-			],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"preRequestScript": null,
-			"method": "GET",
-			"collectionId": "12802e9b-2830-d3d6-6f29-c5c5a8d2e6a6",
-			"data": null,
-			"dataMode": "params",
-			"name": "Set Tag on Perticular Location",
-			"description": "",
-			"descriptionFormat": "html",
-			"time": 1524903170876,
-			"version": 2,
-			"responses": [],
-			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"folder": "5e40f29d-3bf3-ab08-3b60-08927f6dd77c",
-			"isFromCollection": true,
-			"collectionRequestId": "f516a49f-9bde-f13a-a040-2852beffdaff"
-		},
-		{
-			"id": "ad2a2ae6-dadd-4c99-c427-8ac8332196b8",
-			"headers": "Content-Type: application/json\n",
-			"headerData": [
-				{
-					"key": "Content-Type",
-					"value": "application/json",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "http://localhost:3000/user/login",
-			"folder": "3393151e-d118-8c87-bf6e-32ca23980526",
-			"queryParams": [],
-			"preRequestScript": null,
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "POST",
-			"data": [],
-			"dataMode": "raw",
-			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1524890241698,
-			"name": "http://localhost:3000/users/login",
-			"description": "",
-			"collectionId": "12802e9b-2830-d3d6-6f29-c5c5a8d2e6a6",
-			"responses": [],
-			"rawModeData": "{\"username\":\"riteshvish\",\"password\":\"ritesh\"}"
-		},
-		{
-			"id": "c1cd158e-6d4e-bed9-4aa0-acc1820288a1",
-			"headers": "Content-Type: application/json\nAuthorization: c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f83421eccd48153a681bf5c8ad66a6fc49a2a2ca6e1f10742b29dcebd2b828c2b01dc7eedd92965132214f1017265c5d699dd6aad6f86d667624af8fcaa61f7c4ab5c99162678f6f022f08a872c4d370ddb4\n",
-			"headerData": [
-				{
-					"key": "Content-Type",
-					"value": "application/json",
-					"description": "",
-					"enabled": true
+					"name": "Save User Location",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"placeid\":\"ChIJ1RH6XprI5zsR-XiacqeOcpA\"}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/location/save/?access_token=c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f834ad5b566cfacc5809f5f3c2ff0240c1530c730bde946272859048a936b2e75832ed52f672ee17ec9a6b342013662b244fd27e4231f0de84649e54b6587105e82467343fa0404625793d7dc0bdeaf75ae1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"location",
+								"save",
+								""
+							],
+							"query": [
+								{
+									"key": "access_token",
+									"value": "c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f834ad5b566cfacc5809f5f3c2ff0240c1530c730bde946272859048a936b2e75832ed52f672ee17ec9a6b342013662b244fd27e4231f0de84649e54b6587105e82467343fa0404625793d7dc0bdeaf75ae1"
+								}
+							]
+						}
+					},
+					"response": []
 				},
 				{
-					"key": "Authorization",
-					"value": "c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f83421eccd48153a681bf5c8ad66a6fc49a2a2ca6e1f10742b29dcebd2b828c2b01dc7eedd92965132214f1017265c5d699dd6aad6f86d667624af8fcaa61f7c4ab5c99162678f6f022f08a872c4d370ddb4",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "http://localhost:3000/location/tag/",
-			"folder": "5e40f29d-3bf3-ab08-3b60-08927f6dd77c",
-			"queryParams": [],
-			"preRequestScript": null,
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": [],
-			"dataMode": "raw",
-			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1524911637914,
-			"name": "Delete Taged Location",
-			"description": "",
-			"collectionId": "12802e9b-2830-d3d6-6f29-c5c5a8d2e6a6",
-			"responses": [],
-			"isFromCollection": true,
-			"collectionRequestId": "6e8a741f-7ff5-9799-dba1-803819722c81",
-			"rawModeData": "{\"name\":\"Lower parel Office\"}"
-		},
-		{
-			"id": "e0f18395-ab4e-42ed-d543-0e8b566493c0",
-			"headers": "Content-Type: application/json\n",
-			"headerData": [
+					"name": "Delete Saved Location",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"Lower parel Office\"}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/location/save/5ae46cfca3b9b817bae901d9?access_token=c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f834ad5b566cfacc5809f5f3c2ff0240c1530c730bde946272859048a936b2e75832ed52f672ee17ec9a6b342013662b244fd27e4231f0de84649e54b6587105e82467343fa0404625793d7dc0bdeaf75ae1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"location",
+								"save",
+								"5ae46cfca3b9b817bae901d9"
+							],
+							"query": [
+								{
+									"key": "access_token",
+									"value": "c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f834ad5b566cfacc5809f5f3c2ff0240c1530c730bde946272859048a936b2e75832ed52f672ee17ec9a6b342013662b244fd27e4231f0de84649e54b6587105e82467343fa0404625793d7dc0bdeaf75ae1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
 				{
-					"key": "Content-Type",
-					"value": "application/json",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "http://localhost:3000/user/signup",
-			"folder": "3393151e-d118-8c87-bf6e-32ca23980526",
-			"queryParams": [],
-			"preRequestScript": null,
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "POST",
-			"data": [],
-			"dataMode": "raw",
-			"version": 2,
-			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1524883605934,
-			"name": "http://localhost:3000/user/signup",
-			"description": "",
-			"collectionId": "12802e9b-2830-d3d6-6f29-c5c5a8d2e6a6",
-			"responses": [],
-			"rawModeData": "{\"name\":\"Ritesh Vishwakarma\",\"email\":\"rtr.riteshvish@gmail.com\",\"password\":\"ritesh\",\"username\":\"riteshvish\"}"
-		},
-		{
-			"id": "f516a49f-9bde-f13a-a040-2852beffdaff",
-			"headers": "Authorization: c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f83472f5371eb081b3167d1c8eb0e269048f6667648a545bfbc2ba81d78b1d4d9bd1b48ee5e64fa8dce1e3c645db275115268da46229689bdc5ab0edb5cce1750da6e8c660efb90e74199a6da498f12f74c9\n",
-			"headerData": [
+					"name": "List of Saved Location",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"Lower parel Office\"}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/location/save/?access_token=c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f834ad5b566cfacc5809f5f3c2ff0240c1530c730bde946272859048a936b2e75832ed52f672ee17ec9a6b342013662b244fd27e4231f0de84649e54b6587105e82467343fa0404625793d7dc0bdeaf75ae1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"location",
+								"save",
+								""
+							],
+							"query": [
+								{
+									"key": "access_token",
+									"value": "c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f834ad5b566cfacc5809f5f3c2ff0240c1530c730bde946272859048a936b2e75832ed52f672ee17ec9a6b342013662b244fd27e4231f0de84649e54b6587105e82467343fa0404625793d7dc0bdeaf75ae1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
 				{
-					"key": "Authorization",
-					"value": "c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f83472f5371eb081b3167d1c8eb0e269048f6667648a545bfbc2ba81d78b1d4d9bd1b48ee5e64fa8dce1e3c645db275115268da46229689bdc5ab0edb5cce1750da6e8c660efb90e74199a6da498f12f74c9",
-					"description": "",
-					"enabled": true
+					"name": "Details of Saved Location",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"Lower parel Office\"}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/location/save/5ae46e89b9cabc197b8b6a6d/?access_token=c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f834ad5b566cfacc5809f5f3c2ff0240c1530c730bde946272859048a936b2e75832ed52f672ee17ec9a6b342013662b244fd27e4231f0de84649e54b6587105e82467343fa0404625793d7dc0bdeaf75ae1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"location",
+								"save",
+								"5ae46e89b9cabc197b8b6a6d",
+								""
+							],
+							"query": [
+								{
+									"key": "access_token",
+									"value": "c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f834ad5b566cfacc5809f5f3c2ff0240c1530c730bde946272859048a936b2e75832ed52f672ee17ec9a6b342013662b244fd27e4231f0de84649e54b6587105e82467343fa0404625793d7dc0bdeaf75ae1"
+								}
+							]
+						}
+					},
+					"response": []
 				}
-			],
-			"url": "http://localhost:3000/location/tag/5ae423673bec166b5c70aac8?access_token=c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f83472f5371eb081b3167d1c8eb0e269048f6667648a545bfbc2ba81d78b1d4d9bd1b48ee5e64fa8dce1e3c645db275115268da46229689bdc5ab0edb5cce1750da6e8c660efb90e74199a6da498f12f74c9",
-			"queryParams": [
-				{
-					"key": "access_token",
-					"value": "c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f83472f5371eb081b3167d1c8eb0e269048f6667648a545bfbc2ba81d78b1d4d9bd1b48ee5e64fa8dce1e3c645db275115268da46229689bdc5ab0edb5cce1750da6e8c660efb90e74199a6da498f12f74c9",
-					"equals": true,
-					"description": "",
-					"enabled": true
-				}
-			],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"preRequestScript": null,
-			"method": "GET",
-			"collectionId": "12802e9b-2830-d3d6-6f29-c5c5a8d2e6a6",
-			"data": null,
-			"dataMode": "params",
-			"name": "Get All the User Tags",
-			"description": "",
-			"descriptionFormat": "html",
-			"time": 1524903170876,
-			"version": 2,
-			"responses": [],
-			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"folder": "5e40f29d-3bf3-ab08-3b60-08927f6dd77c"
+			]
 		}
 	]
 }
