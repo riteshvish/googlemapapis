@@ -56,12 +56,20 @@ LocationSchema.statics.analytics = function(data, callback) {
   if (Object.keys(groupBy).length == 0) {
     groupBy["search"] = "$text";
   }
+  var match = {
+    username: data.username
+  }
+  if (data.type && typeof data.type == "string") {
+    let type = data.type.split(",")
+    if (type.indexOf("search") > -1) {
+      match["type"] = "search"
+    } else if (type.indexOf("nearby") > -1) {
+      match["type"] = "nearby"
+    }
+  }
 
   Location.aggregate([{
-      $match: {
-        username: data.username,
-        type: "search"
-      }
+      $match: match
     }, {
       $group: {
         // _id: '$text', //$region is the column name in collection
