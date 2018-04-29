@@ -1,6 +1,7 @@
 # README #
-*http://googleapi.snowdropplayers.com:3003/
-*https://docs.google.com/spreadsheets/d/19oCmndwhviyahKYMym48diXM2O5_Zh42m_N3Y2GERD0/edit#gid=0
+
+Service Baseurl   http://googleapi.snowdropplayers.com:3003/
+List of End Point https://docs.google.com/spreadsheets/d/19oCmndwhviyahKYMym48diXM2O5_Zh42m_N3Y2GERD0/edit#gid=0
 
 This README would normally document whatever steps are necessary to get your application up and running.
 
@@ -14,7 +15,14 @@ This README would normally document whatever steps are necessary to get your app
   * mongodb = v3.4.7
   * system = ubuntu 17.10
 
+* Deployment server
+  * EC2 AWS (Free instance)
+
 * Database configuration
+  * Database MongoDB
+  * Database Name googlemapapi
+  * Port 27017
+
 * How to run tests
   * Create log inside root directory
   * Start mongod service
