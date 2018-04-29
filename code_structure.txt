@@ -1,0 +1,56 @@
+.
+├── app.js
+├── bin
+│   └── www
+├── code_structure.txt
+├── config
+│   └── configuration.json
+├── controllers
+│   ├── common.js
+│   ├── favorite.js
+│   ├── location.js
+│   ├── tag.js
+│   ├── usersavedlocation.js
+│   └── users.js
+├── google-api.postman_collection.json
+├── google-api.postman_collection-server.json
+├── helpers
+│   ├── auth.js
+│   ├── googlemap.js
+│   ├── redis.js
+│   └── utils.js
+├── localtest.js
+├── log
+│   └── Sun_Apr_29_2018_20:00:00_GMT+0530_(IST).log
+├── middlewares
+│   ├── logger.js
+│   └── routeguard.js
+├── models
+│   ├── deactivetoken.js
+│   ├── favoritelocation.js
+│   ├── location.js
+│   ├── tag.js
+│   ├── token.js
+│   ├── usersavedlocation.js
+│   └── users.js
+├── package.json
+├── public
+│   ├── images
+│   ├── javascripts
+│   └── stylesheets
+│       └── style.css
+├── README.md
+├── routes
+│   ├── index.js
+│   ├── location.js
+│   └── users.js
+├── test
+│   ├── auth.js
+│   ├── end-to-end.js
+│   └── user.js
+└── views
+    ├── error.jade
+    ├── index.jade
+    └── layout.jade
+
+14 directories, 39 files
