@@ -1,8 +1,8 @@
 var LocationModels = require('./../models/location');
 var conf = require('./../config/configuration');
+var redis = require('./../helpers/redis');
 var debug = require("debug")("google:location");
 var async = require("async");
-var redis = require('./../helpers/redis');
 var googlemap = require('./../helpers/googlemap');
 var utils = require('./../helpers/utils');
 var commonController = require('./common');
@@ -32,7 +32,6 @@ function search(req, res, next) {
         locationModels.save()
         return res.json(location);
       }
-
     })
   }
 }
@@ -78,7 +77,7 @@ function nearby(req, res, next) {
     radius: 10000
   }
   if (req.query.lat && req.query.lng && req.query.type) {
-    data["opennow"] = req.query.opennow || false;
+    // data["opennow"] = req.query.opennow || false;
     data["location"] = [req.query.lat, req.query.lng];
     data["type"] = req.query.type;
     googlemap.placesNearby(data, function(err, location) {

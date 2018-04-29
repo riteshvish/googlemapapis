@@ -24,7 +24,7 @@
 							"raw": "{\"name\":\"Mukul Vishwakarma\",\"email\":\"mukul@gmail.com\",\"password\":\"ritesh\",\"username\":\"mukulvish\"}"
 						},
 						"url": {
-							"raw": "http://localhost:3000/user/signup",
+							"raw": "http://billapi.enlitesolutions.in:3003/user/signup",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -53,7 +53,7 @@
 							"raw": "{\"username\":\"mukulvish\",\"password\":\"ritesh\"}"
 						},
 						"url": {
-							"raw": "http://localhost:3000/user/login",
+							"raw": "http://billapi.enlitesolutions.in:3003/user/login",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -80,7 +80,7 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "http://localhost:3000/user/verify?access_token=9ec39fec504f46ea372d5d8ae2ed47369002ca8d01482ea8283d8a46b154c9555f3de91b7dd2155180d0158b84fc2037f5a5e750b214f714a8d2a93df6c4935e8668d8d1a58a3c61d4802e1f3f69fc719f606b25deb4d4c00a0ed80dd9a573ddc4215cc6ea547355fd216e7dba257e12",
+							"raw": "http://billapi.enlitesolutions.in:3003/user/verify?access_token=9ec39fec504f46ea372d5d8ae2ed47369002ca8d01482ea8283d8a46b154c9555f3de91b7dd2155180d0158b84fc2037f5a5e750b214f714a8d2a93df6c4935e8668d8d1a58a3c61d4802e1f3f69fc719f606b25deb4d4c00a0ed80dd9a573ddc4215cc6ea547355fd216e7dba257e12",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -112,7 +112,7 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "http://localhost:3000/user/logout",
+							"raw": "http://billapi.enlitesolutions.in:3003/user/logout",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -139,7 +139,7 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "http://localhost:3000/user/analytics?on=date,search&access_token=9ec39fec504f46ea372d5d8ae2ed47369002ca8d01482ea8283d8a46b154c9555f3de91b7dd2155180d0158b84fc2037f5a5e750b214f714a8d2a93df6c4935e8668d8d1a58a3c61d4802e1f3f69fc719f606b25deb4d4c00a0ed80dd9a573ddc4215cc6ea547355fd216e7dba257e12",
+							"raw": "http://billapi.enlitesolutions.in:3003/user/analytics?on=date,search&access_token=9ec39fec504f46ea372d5d8ae2ed47369002ca8d01482ea8283d8a46b154c9555f3de91b7dd2155180d0158b84fc2037f5a5e750b214f714a8d2a93df6c4935e8668d8d1a58a3c61d4802e1f3f69fc719f606b25deb4d4c00a0ed80dd9a573ddc4215cc6ea547355fd216e7dba257e12",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -189,7 +189,7 @@
 							"raw": "{\"name\":\"Office\",\"place_id\":\"ChIJb7exV_SW5zsRJr1FpDxG3zU\"}"
 						},
 						"url": {
-							"raw": "http://localhost:3000/location/search?text=ulhasnagar&access_token=9ec39fec504f46ea372d5d8ae2ed47369002ca8d01482ea8283d8a46b154c9555f3de91b7dd2155180d0158b84fc2037f5a5e750b214f714a8d2a93df6c4935e8668d8d1a58a3c61d4802e1f3f69fc719f606b25deb4d4c00a0ed80dd9a573ddc4215cc6ea547355fd216e7dba257e12",
+							"raw": "http://billapi.enlitesolutions.in:3003/location/search?text=ulhasnagar&access_token=9ec39fec504f46ea372d5d8ae2ed47369002ca8d01482ea8283d8a46b154c9555f3de91b7dd2155180d0158b84fc2037f5a5e750b214f714a8d2a93df6c4935e8668d8d1a58a3c61d4802e1f3f69fc719f606b25deb4d4c00a0ed80dd9a573ddc4215cc6ea547355fd216e7dba257e12",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -220,7 +220,7 @@
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": "http://localhost:3000/location/search/list/?access_token=9ec39fec504f46ea372d5d8ae2ed47369002ca8d01482ea8283d8a46b154c9555f3de91b7dd2155180d0158b84fc2037f5a5e750b214f714a8d2a93df6c4935e8668d8d1a58a3c61d4802e1f3f69fc719f606b25deb4d4c00a0ed80dd9a573ddc4215cc6ea547355fd216e7dba257e12",
+							"raw": "http://billapi.enlitesolutions.in:3003/location/search/list/?access_token=9ec39fec504f46ea372d5d8ae2ed47369002ca8d01482ea8283d8a46b154c9555f3de91b7dd2155180d0158b84fc2037f5a5e750b214f714a8d2a93df6c4935e8668d8d1a58a3c61d4802e1f3f69fc719f606b25deb4d4c00a0ed80dd9a573ddc4215cc6ea547355fd216e7dba257e12",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -263,7 +263,7 @@
 							"raw": "{\"name\":\"Lower parel Office\",\"placeid\":\"asfasdf\"}"
 						},
 						"url": {
-							"raw": "http://localhost:3000/location/tag?access_token=9ec39fec504f46ea372d5d8ae2ed47369002ca8d01482ea8283d8a46b154c9555f3de91b7dd2155180d0158b84fc2037f5a5e750b214f714a8d2a93df6c4935e8668d8d1a58a3c61d4802e1f3f69fc719f606b25deb4d4c00a0ed80dd9a573ddc4215cc6ea547355fd216e7dba257e12",
+							"raw": "http://billapi.enlitesolutions.in:3003/location/tag?access_token=9ec39fec504f46ea372d5d8ae2ed47369002ca8d01482ea8283d8a46b154c9555f3de91b7dd2155180d0158b84fc2037f5a5e750b214f714a8d2a93df6c4935e8668d8d1a58a3c61d4802e1f3f69fc719f606b25deb4d4c00a0ed80dd9a573ddc4215cc6ea547355fd216e7dba257e12",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -296,7 +296,7 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "http://localhost:3000/location/tag?access_token=9ec39fec504f46ea372d5d8ae2ed47369002ca8d01482ea8283d8a46b154c9555f3de91b7dd2155180d0158b84fc2037f5a5e750b214f714a8d2a93df6c4935e8668d8d1a58a3c61d4802e1f3f69fc719f606b25deb4d4c00a0ed80dd9a573ddc4215cc6ea547355fd216e7dba257e12",
+							"raw": "http://billapi.enlitesolutions.in:3003/location/tag?access_token=9ec39fec504f46ea372d5d8ae2ed47369002ca8d01482ea8283d8a46b154c9555f3de91b7dd2155180d0158b84fc2037f5a5e750b214f714a8d2a93df6c4935e8668d8d1a58a3c61d4802e1f3f69fc719f606b25deb4d4c00a0ed80dd9a573ddc4215cc6ea547355fd216e7dba257e12",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -335,7 +335,7 @@
 							"raw": "{\"name\":\"Lower parel Office\"}"
 						},
 						"url": {
-							"raw": "http://localhost:3000/location/tag/5ae4af39e1c3f54f2a27ca0a",
+							"raw": "http://billapi.enlitesolutions.in:3003/location/tag/5ae4af39e1c3f54f2a27ca0a",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -369,7 +369,7 @@
 							"raw": "{\"name\":\"Ritesh Office\"}"
 						},
 						"url": {
-							"raw": "http://localhost:3000/location/tag/5ae4af39e1c3f54f2a27ca0a",
+							"raw": "http://billapi.enlitesolutions.in:3003/location/tag/5ae4af39e1c3f54f2a27ca0a",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -403,7 +403,7 @@
 							"raw": "{\"name\":\"Lower parel Office\"}"
 						},
 						"url": {
-							"raw": "http://localhost:3000/location/tag/5ae4af39e1c3f54f2a27ca0a",
+							"raw": "http://billapi.enlitesolutions.in:3003/location/tag/5ae4af39e1c3f54f2a27ca0a",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -439,7 +439,7 @@
 							"raw": "{\"placeid\":\"ChIJ1RH6XprI5zsR-XiacqeOcpA\"}"
 						},
 						"url": {
-							"raw": "http://localhost:3000/location/save/?access_token=c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f834ad5b566cfacc5809f5f3c2ff0240c1530c730bde946272859048a936b2e75832ed52f672ee17ec9a6b342013662b244fd27e4231f0de84649e54b6587105e82467343fa0404625793d7dc0bdeaf75ae1",
+							"raw": "http://billapi.enlitesolutions.in:3003/location/save/?access_token=c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f834ad5b566cfacc5809f5f3c2ff0240c1530c730bde946272859048a936b2e75832ed52f672ee17ec9a6b342013662b244fd27e4231f0de84649e54b6587105e82467343fa0404625793d7dc0bdeaf75ae1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -475,7 +475,7 @@
 							"raw": "{\"name\":\"Lower parel Office\"}"
 						},
 						"url": {
-							"raw": "http://localhost:3000/location/save/5ae46cfca3b9b817bae901d9?access_token=c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f834ad5b566cfacc5809f5f3c2ff0240c1530c730bde946272859048a936b2e75832ed52f672ee17ec9a6b342013662b244fd27e4231f0de84649e54b6587105e82467343fa0404625793d7dc0bdeaf75ae1",
+							"raw": "http://billapi.enlitesolutions.in:3003/location/save/5ae46cfca3b9b817bae901d9?access_token=c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f834ad5b566cfacc5809f5f3c2ff0240c1530c730bde946272859048a936b2e75832ed52f672ee17ec9a6b342013662b244fd27e4231f0de84649e54b6587105e82467343fa0404625793d7dc0bdeaf75ae1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -511,7 +511,7 @@
 							"raw": "{\"name\":\"Lower parel Office\"}"
 						},
 						"url": {
-							"raw": "http://localhost:3000/location/save/?access_token=c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f834ad5b566cfacc5809f5f3c2ff0240c1530c730bde946272859048a936b2e75832ed52f672ee17ec9a6b342013662b244fd27e4231f0de84649e54b6587105e82467343fa0404625793d7dc0bdeaf75ae1",
+							"raw": "http://billapi.enlitesolutions.in:3003/location/save/?access_token=c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f834ad5b566cfacc5809f5f3c2ff0240c1530c730bde946272859048a936b2e75832ed52f672ee17ec9a6b342013662b244fd27e4231f0de84649e54b6587105e82467343fa0404625793d7dc0bdeaf75ae1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -547,7 +547,7 @@
 							"raw": "{\"name\":\"Lower parel Office\"}"
 						},
 						"url": {
-							"raw": "http://localhost:3000/location/save/5ae46e89b9cabc197b8b6a6d/?access_token=c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f834ad5b566cfacc5809f5f3c2ff0240c1530c730bde946272859048a936b2e75832ed52f672ee17ec9a6b342013662b244fd27e4231f0de84649e54b6587105e82467343fa0404625793d7dc0bdeaf75ae1",
+							"raw": "http://billapi.enlitesolutions.in:3003/location/save/5ae46e89b9cabc197b8b6a6d/?access_token=c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f834ad5b566cfacc5809f5f3c2ff0240c1530c730bde946272859048a936b2e75832ed52f672ee17ec9a6b342013662b244fd27e4231f0de84649e54b6587105e82467343fa0404625793d7dc0bdeaf75ae1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -590,7 +590,7 @@
 							"raw": "{\"placeid\":\"ChIJ1RH6XprI5zsR-XiacqeOcpA\"}"
 						},
 						"url": {
-							"raw": "http://localhost:3000/location/favorite/?access_token=c8a087f983b479947bea566fa691d7c5a9925578c26f5929521213947c8da13767ec922106910119ba71f8f96525175adadbbea8e1cefe2cbe34c9ab01493431114226615e59d4dcdc71b617fa8e836a25d929bcd6e6c125f7d29fa7f9434f6af855212f3e9870b5ab1310d4818e1417",
+							"raw": "http://billapi.enlitesolutions.in:3003/location/favorite/?access_token=c8a087f983b479947bea566fa691d7c5a9925578c26f5929521213947c8da13767ec922106910119ba71f8f96525175adadbbea8e1cefe2cbe34c9ab01493431114226615e59d4dcdc71b617fa8e836a25d929bcd6e6c125f7d29fa7f9434f6af855212f3e9870b5ab1310d4818e1417",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -626,7 +626,7 @@
 							"raw": "{\"name\":\"Lower parel Office\"}"
 						},
 						"url": {
-							"raw": "http://localhost:3000/location/favorite/5ae46cfca3b9b817bae901d9?access_token=c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f834ad5b566cfacc5809f5f3c2ff0240c1530c730bde946272859048a936b2e75832ed52f672ee17ec9a6b342013662b244fd27e4231f0de84649e54b6587105e82467343fa0404625793d7dc0bdeaf75ae1",
+							"raw": "http://billapi.enlitesolutions.in:3003/location/favorite/5ae46cfca3b9b817bae901d9?access_token=c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f834ad5b566cfacc5809f5f3c2ff0240c1530c730bde946272859048a936b2e75832ed52f672ee17ec9a6b342013662b244fd27e4231f0de84649e54b6587105e82467343fa0404625793d7dc0bdeaf75ae1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -662,7 +662,7 @@
 							"raw": "{\"name\":\"Lower parel Office\"}"
 						},
 						"url": {
-							"raw": "http://localhost:3000/location/favorite/?access_token=c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f834ad5b566cfacc5809f5f3c2ff0240c1530c730bde946272859048a936b2e75832ed52f672ee17ec9a6b342013662b244fd27e4231f0de84649e54b6587105e82467343fa0404625793d7dc0bdeaf75ae1",
+							"raw": "http://billapi.enlitesolutions.in:3003/location/favorite/?access_token=c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f834ad5b566cfacc5809f5f3c2ff0240c1530c730bde946272859048a936b2e75832ed52f672ee17ec9a6b342013662b244fd27e4231f0de84649e54b6587105e82467343fa0404625793d7dc0bdeaf75ae1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -698,7 +698,7 @@
 							"raw": "{\"name\":\"Lower parel Office\"}"
 						},
 						"url": {
-							"raw": "http://localhost:3000/location/favorite/5ae46e89b9cabc197b8b6a6d/?access_token=c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f834ad5b566cfacc5809f5f3c2ff0240c1530c730bde946272859048a936b2e75832ed52f672ee17ec9a6b342013662b244fd27e4231f0de84649e54b6587105e82467343fa0404625793d7dc0bdeaf75ae1",
+							"raw": "http://billapi.enlitesolutions.in:3003/location/favorite/5ae46e89b9cabc197b8b6a6d/?access_token=c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f834ad5b566cfacc5809f5f3c2ff0240c1530c730bde946272859048a936b2e75832ed52f672ee17ec9a6b342013662b244fd27e4231f0de84649e54b6587105e82467343fa0404625793d7dc0bdeaf75ae1",
 							"protocol": "http",
 							"host": [
 								"localhost"

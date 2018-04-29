@@ -1,0 +1,822 @@
+{
+	"info": {
+		"_postman_id": "363ad48d-105d-471a-baa2-665b815292a2",
+		"name": "google-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "users",
+			"description": "",
+			"item": [
+				{
+					"name": "User Signup",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"Ritesh Vishwakarma\",\"email\":\"ritesh@gmail.com\",\"password\":\"ritesh\",\"username\":\"riteshvish\"}"
+						},
+						"url": {
+							"raw": "http://googleapi.snowdropplayers.com:3003/user/signup",
+							"protocol": "http",
+							"host": [
+								"googleapi",
+								"snowdropplayers",
+								"com"
+							],
+							"port": "3003",
+							"path": [
+								"user",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\":\"riteshvish\",\"password\":\"ritesh\"}"
+						},
+						"url": {
+							"raw": "http://googleapi.snowdropplayers.com:3003/user/login",
+							"protocol": "http",
+							"host": [
+								"googleapi",
+								"snowdropplayers",
+								"com"
+							],
+							"port": "3003",
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify User Access Token",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f8343dc32c8714c87e667b6e47f3e2f8818a2664983cdb8a6b102027fb2b3761c3b177f273e4dbd1d100ccaf62d051c80cb831e3ac6d20baefa79aa3ffe3183b29db6d9071aced0044809e514cf90bf75abb",
+								"disabled": true
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://googleapi.snowdropplayers.com:3003/user/verify?access_token=c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f8343ccefea489288bc447a4857323f86ce94afd513cbe05bd469d25e3203ec62b6536f9c90a79cefa73ee780576425e4c1c2ec1a76959216027122b0d3df1efed3e57ea3ff00bca8af7125c85f1f72019bd",
+							"protocol": "http",
+							"host": [
+								"googleapi",
+								"snowdropplayers",
+								"com"
+							],
+							"port": "3003",
+							"path": [
+								"user",
+								"verify"
+							],
+							"query": [
+								{
+									"key": "access_token",
+									"value": "c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f8343ccefea489288bc447a4857323f86ce94afd513cbe05bd469d25e3203ec62b6536f9c90a79cefa73ee780576425e4c1c2ec1a76959216027122b0d3df1efed3e57ea3ff00bca8af7125c85f1f72019bd"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Logout",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f834b2fd45cb69bb3f06006adeb2e48548ca91187f2c194b5dfb3541caf7c890331b53bfe13ca6800ca7438fd8734684aa9aa00b897b01bc3a9096a119ea571480aefd3845c0cd9799e70851972d695c0525"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:3000/user/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Analytics",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f8343dc32c8714c87e667b6e47f3e2f8818a2664983cdb8a6b102027fb2b3761c3b177f273e4dbd1d100ccaf62d051c80cb831e3ac6d20baefa79aa3ffe3183b29db6d9071aced0044809e514cf90bf75abb",
+								"disabled": true
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://googleapi.snowdropplayers.com:3003/user/analytics?on=date,search&access_token=c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f8343ccefea489288bc447a4857323f86ce94afd513cbe05bd469d25e3203ec62b6536f9c90a79cefa73ee780576425e4c1c2ec1a76959216027122b0d3df1efed3e57ea3ff00bca8af7125c85f1f72019bd",
+							"protocol": "http",
+							"host": [
+								"googleapi",
+								"snowdropplayers",
+								"com"
+							],
+							"port": "3003",
+							"path": [
+								"user",
+								"analytics"
+							],
+							"query": [
+								{
+									"key": "on",
+									"value": "date,search"
+								},
+								{
+									"key": "access_token",
+									"value": "c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f8343ccefea489288bc447a4857323f86ce94afd513cbe05bd469d25e3203ec62b6536f9c90a79cefa73ee780576425e4c1c2ec1a76959216027122b0d3df1efed3e57ea3ff00bca8af7125c85f1f72019bd"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "location",
+			"description": "",
+			"item": [
+				{
+					"name": "Search Location",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"Office\",\"place_id\":\"ChIJb7exV_SW5zsRJr1FpDxG3zU\"}"
+						},
+						"url": {
+							"raw": "http://googleapi.snowdropplayers.com:3003/location/search?text=ulhasnagar&access_token=c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f8343ccefea489288bc447a4857323f86ce94afd513cbe05bd469d25e3203ec62b6536f9c90a79cefa73ee780576425e4c1c2ec1a76959216027122b0d3df1efed3e57ea3ff00bca8af7125c85f1f72019bd",
+							"protocol": "http",
+							"host": [
+								"googleapi",
+								"snowdropplayers",
+								"com"
+							],
+							"port": "3003",
+							"path": [
+								"location",
+								"search"
+							],
+							"query": [
+								{
+									"key": "text",
+									"value": "ulhasnagar"
+								},
+								{
+									"key": "access_token",
+									"value": "c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f8343ccefea489288bc447a4857323f86ce94afd513cbe05bd469d25e3203ec62b6536f9c90a79cefa73ee780576425e4c1c2ec1a76959216027122b0d3df1efed3e57ea3ff00bca8af7125c85f1f72019bd"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search NearBy Location",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"Office\",\"place_id\":\"ChIJb7exV_SW5zsRJr1FpDxG3zU\"}"
+						},
+						"url": {
+							"raw": "http://googleapi.snowdropplayers.com:3003/location/nearby?type=hospital&lat=19.221511&lng=73.164463&access_token=c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f8343ccefea489288bc447a4857323f86ce94afd513cbe05bd469d25e3203ec62b6536f9c90a79cefa73ee780576425e4c1c2ec1a76959216027122b0d3df1efed3e57ea3ff00bca8af7125c85f1f72019bd",
+							"protocol": "http",
+							"host": [
+								"googleapi",
+								"snowdropplayers",
+								"com"
+							],
+							"port": "3003",
+							"path": [
+								"location",
+								"nearby"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "hospital"
+								},
+								{
+									"key": "lat",
+									"value": "19.221511"
+								},
+								{
+									"key": "lng",
+									"value": "73.164463"
+								},
+								{
+									"key": "access_token",
+									"value": "c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f8343ccefea489288bc447a4857323f86ce94afd513cbe05bd469d25e3203ec62b6536f9c90a79cefa73ee780576425e4c1c2ec1a76959216027122b0d3df1efed3e57ea3ff00bca8af7125c85f1f72019bd"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Search list with pagination",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://googleapi.snowdropplayers.com:3003/location/search/list/?access_token=c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f8343ccefea489288bc447a4857323f86ce94afd513cbe05bd469d25e3203ec62b6536f9c90a79cefa73ee780576425e4c1c2ec1a76959216027122b0d3df1efed3e57ea3ff00bca8af7125c85f1f72019bd",
+							"protocol": "http",
+							"host": [
+								"googleapi",
+								"snowdropplayers",
+								"com"
+							],
+							"port": "3003",
+							"path": [
+								"location",
+								"search",
+								"list",
+								""
+							],
+							"query": [
+								{
+									"key": "access_token",
+									"value": "c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f8343ccefea489288bc447a4857323f86ce94afd513cbe05bd469d25e3203ec62b6536f9c90a79cefa73ee780576425e4c1c2ec1a76959216027122b0d3df1efed3e57ea3ff00bca8af7125c85f1f72019bd"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "tag",
+			"description": "",
+			"item": [
+				{
+					"name": "Add Taged Location",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"Lower parel Office\",\"placeid\":\"ChIJUbqLlEKU5zsR99shPN4_1Cg\"}"
+						},
+						"url": {
+							"raw": "http://googleapi.snowdropplayers.com:3003/location/tag?access_token=c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f8343ccefea489288bc447a4857323f86ce94afd513cbe05bd469d25e3203ec62b6536f9c90a79cefa73ee780576425e4c1c2ec1a76959216027122b0d3df1efed3e57ea3ff00bca8af7125c85f1f72019bd",
+							"protocol": "http",
+							"host": [
+								"googleapi",
+								"snowdropplayers",
+								"com"
+							],
+							"port": "3003",
+							"path": [
+								"location",
+								"tag"
+							],
+							"query": [
+								{
+									"key": "access_token",
+									"value": "c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f8343ccefea489288bc447a4857323f86ce94afd513cbe05bd469d25e3203ec62b6536f9c90a79cefa73ee780576425e4c1c2ec1a76959216027122b0d3df1efed3e57ea3ff00bca8af7125c85f1f72019bd"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All the User Tags",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f83472f5371eb081b3167d1c8eb0e269048f6667648a545bfbc2ba81d78b1d4d9bd1b48ee5e64fa8dce1e3c645db275115268da46229689bdc5ab0edb5cce1750da6e8c660efb90e74199a6da498f12f74c9",
+								"disabled": true
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://googleapi.snowdropplayers.com:3003/location/tag?access_token=c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f8343ccefea489288bc447a4857323f86ce94afd513cbe05bd469d25e3203ec62b6536f9c90a79cefa73ee780576425e4c1c2ec1a76959216027122b0d3df1efed3e57ea3ff00bca8af7125c85f1f72019bd",
+							"protocol": "http",
+							"host": [
+								"googleapi",
+								"snowdropplayers",
+								"com"
+							],
+							"port": "3003",
+							"path": [
+								"location",
+								"tag"
+							],
+							"query": [
+								{
+									"key": "access_token",
+									"value": "c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f8343ccefea489288bc447a4857323f86ce94afd513cbe05bd469d25e3203ec62b6536f9c90a79cefa73ee780576425e4c1c2ec1a76959216027122b0d3df1efed3e57ea3ff00bca8af7125c85f1f72019bd"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Tag Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"Lower parel Office\"}"
+						},
+						"url": {
+							"raw": "http://googleapi.snowdropplayers.com:3003/location/tag/5ae5cdeebc645e613f53ddaa?access_token=c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f8343ccefea489288bc447a4857323f86ce94afd513cbe05bd469d25e3203ec62b6536f9c90a79cefa73ee780576425e4c1c2ec1a76959216027122b0d3df1efed3e57ea3ff00bca8af7125c85f1f72019bd",
+							"protocol": "http",
+							"host": [
+								"googleapi",
+								"snowdropplayers",
+								"com"
+							],
+							"port": "3003",
+							"path": [
+								"location",
+								"tag",
+								"5ae5cdeebc645e613f53ddaa"
+							],
+							"query": [
+								{
+									"key": "access_token",
+									"value": "c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f8343ccefea489288bc447a4857323f86ce94afd513cbe05bd469d25e3203ec62b6536f9c90a79cefa73ee780576425e4c1c2ec1a76959216027122b0d3df1efed3e57ea3ff00bca8af7125c85f1f72019bd"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Set Tag on Perticular Location",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"Ritesh Office\"}"
+						},
+						"url": {
+							"raw": "http://googleapi.snowdropplayers.com:3003/location/tag/5ae5cdeebc645e613f53ddaa?access_token=c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f8343ccefea489288bc447a4857323f86ce94afd513cbe05bd469d25e3203ec62b6536f9c90a79cefa73ee780576425e4c1c2ec1a76959216027122b0d3df1efed3e57ea3ff00bca8af7125c85f1f72019bd",
+							"protocol": "http",
+							"host": [
+								"googleapi",
+								"snowdropplayers",
+								"com"
+							],
+							"port": "3003",
+							"path": [
+								"location",
+								"tag",
+								"5ae5cdeebc645e613f53ddaa"
+							],
+							"query": [
+								{
+									"key": "access_token",
+									"value": "c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f8343ccefea489288bc447a4857323f86ce94afd513cbe05bd469d25e3203ec62b6536f9c90a79cefa73ee780576425e4c1c2ec1a76959216027122b0d3df1efed3e57ea3ff00bca8af7125c85f1f72019bd"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Tag Details",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"Lower parel Office\"}"
+						},
+						"url": {
+							"raw": "http://googleapi.snowdropplayers.com:3003/location/tag/5ae5cdeebc645e613f53ddaa?access_token=c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f8343ccefea489288bc447a4857323f86ce94afd513cbe05bd469d25e3203ec62b6536f9c90a79cefa73ee780576425e4c1c2ec1a76959216027122b0d3df1efed3e57ea3ff00bca8af7125c85f1f72019bd",
+							"protocol": "http",
+							"host": [
+								"googleapi",
+								"snowdropplayers",
+								"com"
+							],
+							"port": "3003",
+							"path": [
+								"location",
+								"tag",
+								"5ae5cdeebc645e613f53ddaa"
+							],
+							"query": [
+								{
+									"key": "access_token",
+									"value": "c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f8343ccefea489288bc447a4857323f86ce94afd513cbe05bd469d25e3203ec62b6536f9c90a79cefa73ee780576425e4c1c2ec1a76959216027122b0d3df1efed3e57ea3ff00bca8af7125c85f1f72019bd"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Save Location",
+			"description": "",
+			"item": [
+				{
+					"name": "Save User Location",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"placeid\":\"ChIJ1RH6XprI5zsR-XiacqeOcpA\"}"
+						},
+						"url": {
+							"raw": "http://googleapi.snowdropplayers.com:3003/location/save/?access_token=c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f8343ccefea489288bc447a4857323f86ce94afd513cbe05bd469d25e3203ec62b6536f9c90a79cefa73ee780576425e4c1c2ec1a76959216027122b0d3df1efed3e57ea3ff00bca8af7125c85f1f72019bd",
+							"protocol": "http",
+							"host": [
+								"googleapi",
+								"snowdropplayers",
+								"com"
+							],
+							"port": "3003",
+							"path": [
+								"location",
+								"save",
+								""
+							],
+							"query": [
+								{
+									"key": "access_token",
+									"value": "c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f8343ccefea489288bc447a4857323f86ce94afd513cbe05bd469d25e3203ec62b6536f9c90a79cefa73ee780576425e4c1c2ec1a76959216027122b0d3df1efed3e57ea3ff00bca8af7125c85f1f72019bd"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Saved Location",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"Lower parel Office\"}"
+						},
+						"url": {
+							"raw": "http://googleapi.snowdropplayers.com:3003/location/save/5ae5ce93bc645e613f53ddac?access_token=c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f8343ccefea489288bc447a4857323f86ce94afd513cbe05bd469d25e3203ec62b6536f9c90a79cefa73ee780576425e4c1c2ec1a76959216027122b0d3df1efed3e57ea3ff00bca8af7125c85f1f72019bd",
+							"protocol": "http",
+							"host": [
+								"googleapi",
+								"snowdropplayers",
+								"com"
+							],
+							"port": "3003",
+							"path": [
+								"location",
+								"save",
+								"5ae5ce93bc645e613f53ddac"
+							],
+							"query": [
+								{
+									"key": "access_token",
+									"value": "c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f8343ccefea489288bc447a4857323f86ce94afd513cbe05bd469d25e3203ec62b6536f9c90a79cefa73ee780576425e4c1c2ec1a76959216027122b0d3df1efed3e57ea3ff00bca8af7125c85f1f72019bd"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List of Saved Location",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"Lower parel Office\"}"
+						},
+						"url": {
+							"raw": "http://googleapi.snowdropplayers.com:3003/location/save/?access_token=c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f8343ccefea489288bc447a4857323f86ce94afd513cbe05bd469d25e3203ec62b6536f9c90a79cefa73ee780576425e4c1c2ec1a76959216027122b0d3df1efed3e57ea3ff00bca8af7125c85f1f72019bd",
+							"protocol": "http",
+							"host": [
+								"googleapi",
+								"snowdropplayers",
+								"com"
+							],
+							"port": "3003",
+							"path": [
+								"location",
+								"save",
+								""
+							],
+							"query": [
+								{
+									"key": "access_token",
+									"value": "c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f8343ccefea489288bc447a4857323f86ce94afd513cbe05bd469d25e3203ec62b6536f9c90a79cefa73ee780576425e4c1c2ec1a76959216027122b0d3df1efed3e57ea3ff00bca8af7125c85f1f72019bd"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Details of Saved Location",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"Lower parel Office\"}"
+						},
+						"url": {
+							"raw": "http://googleapi.snowdropplayers.com:3003/location/save/5ae5ce93bc645e613f53ddac?access_token=c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f8343ccefea489288bc447a4857323f86ce94afd513cbe05bd469d25e3203ec62b6536f9c90a79cefa73ee780576425e4c1c2ec1a76959216027122b0d3df1efed3e57ea3ff00bca8af7125c85f1f72019bd",
+							"protocol": "http",
+							"host": [
+								"googleapi",
+								"snowdropplayers",
+								"com"
+							],
+							"port": "3003",
+							"path": [
+								"location",
+								"save",
+								"5ae5ce93bc645e613f53ddac"
+							],
+							"query": [
+								{
+									"key": "access_token",
+									"value": "c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f8343ccefea489288bc447a4857323f86ce94afd513cbe05bd469d25e3203ec62b6536f9c90a79cefa73ee780576425e4c1c2ec1a76959216027122b0d3df1efed3e57ea3ff00bca8af7125c85f1f72019bd"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Favorite Location",
+			"description": "",
+			"item": [
+				{
+					"name": "Favorite User Location",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"placeid\":\"ChIJ1RH6XprI5zsR-XiacqeOcpA\"}"
+						},
+						"url": {
+							"raw": "http://googleapi.snowdropplayers.com:3003/location/favorite/?access_token=c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f8343ccefea489288bc447a4857323f86ce94afd513cbe05bd469d25e3203ec62b6536f9c90a79cefa73ee780576425e4c1c2ec1a76959216027122b0d3df1efed3e57ea3ff00bca8af7125c85f1f72019bd",
+							"protocol": "http",
+							"host": [
+								"googleapi",
+								"snowdropplayers",
+								"com"
+							],
+							"port": "3003",
+							"path": [
+								"location",
+								"favorite",
+								""
+							],
+							"query": [
+								{
+									"key": "access_token",
+									"value": "c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f8343ccefea489288bc447a4857323f86ce94afd513cbe05bd469d25e3203ec62b6536f9c90a79cefa73ee780576425e4c1c2ec1a76959216027122b0d3df1efed3e57ea3ff00bca8af7125c85f1f72019bd"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Favorite Location",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"Lower parel Office\"}"
+						},
+						"url": {
+							"raw": "http://googleapi.snowdropplayers.com:3003/location/favorite/5ae5cf21bc645e613f53ddad?access_token=c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f8343ccefea489288bc447a4857323f86ce94afd513cbe05bd469d25e3203ec62b6536f9c90a79cefa73ee780576425e4c1c2ec1a76959216027122b0d3df1efed3e57ea3ff00bca8af7125c85f1f72019bd",
+							"protocol": "http",
+							"host": [
+								"googleapi",
+								"snowdropplayers",
+								"com"
+							],
+							"port": "3003",
+							"path": [
+								"location",
+								"favorite",
+								"5ae5cf21bc645e613f53ddad"
+							],
+							"query": [
+								{
+									"key": "access_token",
+									"value": "c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f8343ccefea489288bc447a4857323f86ce94afd513cbe05bd469d25e3203ec62b6536f9c90a79cefa73ee780576425e4c1c2ec1a76959216027122b0d3df1efed3e57ea3ff00bca8af7125c85f1f72019bd"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List of Favorite Location",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"Lower parel Office\"}"
+						},
+						"url": {
+							"raw": "http://googleapi.snowdropplayers.com:3003/location/favorite/?access_token=c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f8343ccefea489288bc447a4857323f86ce94afd513cbe05bd469d25e3203ec62b6536f9c90a79cefa73ee780576425e4c1c2ec1a76959216027122b0d3df1efed3e57ea3ff00bca8af7125c85f1f72019bd",
+							"protocol": "http",
+							"host": [
+								"googleapi",
+								"snowdropplayers",
+								"com"
+							],
+							"port": "3003",
+							"path": [
+								"location",
+								"favorite",
+								""
+							],
+							"query": [
+								{
+									"key": "access_token",
+									"value": "c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f8343ccefea489288bc447a4857323f86ce94afd513cbe05bd469d25e3203ec62b6536f9c90a79cefa73ee780576425e4c1c2ec1a76959216027122b0d3df1efed3e57ea3ff00bca8af7125c85f1f72019bd"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Details of Favorite Location",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"Lower parel Office\"}"
+						},
+						"url": {
+							"raw": "http://googleapi.snowdropplayers.com:3003/location/favorite/5ae5cf21bc645e613f53ddad?access_token=c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f8343ccefea489288bc447a4857323f86ce94afd513cbe05bd469d25e3203ec62b6536f9c90a79cefa73ee780576425e4c1c2ec1a76959216027122b0d3df1efed3e57ea3ff00bca8af7125c85f1f72019bd",
+							"protocol": "http",
+							"host": [
+								"googleapi",
+								"snowdropplayers",
+								"com"
+							],
+							"port": "3003",
+							"path": [
+								"location",
+								"favorite",
+								"5ae5cf21bc645e613f53ddad"
+							],
+							"query": [
+								{
+									"key": "access_token",
+									"value": "c8a087f983b479947bea566fa691d7c5f1859f7d2e6f0ceaaabbc7639764f8343ccefea489288bc447a4857323f86ce94afd513cbe05bd469d25e3203ec62b6536f9c90a79cefa73ee780576425e4c1c2ec1a76959216027122b0d3df1efed3e57ea3ff00bca8af7125c85f1f72019bd"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

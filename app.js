@@ -52,6 +52,7 @@ app.use(logger.log);
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 
+app.disable('x-powered-by');
 app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({
@@ -79,6 +80,7 @@ app.use(function(req, res, next) {
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
+  // console.log("hofasd");
   console.log(err);
 
   res.locals.error = req.app.get('env') === 'development' ? err : {};

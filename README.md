@@ -1,4 +1,6 @@
 # README #
+*http://googleapi.snowdropplayers.com:3003/
+
 
 This README would normally document whatever steps are necessary to get your application up and running.
 
@@ -14,6 +16,7 @@ This README would normally document whatever steps are necessary to get your app
 
 * Database configuration
 * How to run tests
-  Start Mongodb
-  Start Redis
-  node bin/www
+  * Create log inside root directory
+  * Start mongod service
+  * start redis service
+  * node bin/www

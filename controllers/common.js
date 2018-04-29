@@ -20,8 +20,8 @@ module.exports = {
           if (err) {
             return cb(err)
           } else {
-            var next = `http://localhost:3000/location/${options.type}/?limit=${options.limit}&page=${options.page+2}&access_token=${options.authorization}`;
-            var pervious = `http://localhost:3000/location/${options.type}/?limit=${options.limit}&page=${(options.page)}&access_token=${options.authorization}`;
+            var next = `http://googleapi.snowdropplayers.com:3000/location/${options.type}/?limit=${options.limit}&page=${options.page+2}&access_token=${options.authorization}`;
+            var pervious = `http://googleapi.snowdropplayers.com:3000/location/${options.type}/?limit=${options.limit}&page=${(options.page)}&access_token=${options.authorization}`;
             let pagination = {};
             if (list && list.length == options.limit && (options.page * options.limit !== count)) {
               pagination.next = next;

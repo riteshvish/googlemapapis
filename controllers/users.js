@@ -63,21 +63,28 @@ function login(req, res, next) {
 
 
 function signup(req, res, next) {
+  var letters = /^[0-9a-z]+$/;
   let body = req.body;
-
-  var user = new UserModel(req.body);
-  user.save(function(err, data) {
-    if (err) {
-      debug(err);
-      return res.status(400).send({
-        message: err.errmsg
-      });
-    } else {
-      return res.json({
-        message: 'User created Successfully'
-      });
-    }
-  });
+  if (body.username.match(letters)) {
+    var user = new UserModel(req.body);
+    user.save(function(err, data) {
+      if (err) {
+        debug(err);
+        return res.status(400).send({
+          message: err.errmsg
+        });
+      } else {
+        return res.json({
+          message: 'User created Successfully'
+        });
+      }
+    });
+  } else {
+    return res.json(400, {
+      message: 'Invalid username or please send username in lowercase alphanumeric '
+    })
+    // return next(new Error(""))
+  }
 }
 
 
