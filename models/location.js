@@ -79,6 +79,9 @@ LocationSchema.statics.analytics = function(data, callback) {
         },
         "type": {
           "$first": "$type"
+        },
+        "text": {
+          "$first": "$text"
         }
       }
     }],

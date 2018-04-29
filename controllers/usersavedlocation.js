@@ -41,7 +41,7 @@ function create(req, res, next) {
       res.send(err);
     } else {
       res.json({
-        message: 'Tag created Successfully'
+        message: 'Location Successfully saved'
       });
     }
   });
@@ -50,7 +50,7 @@ function create(req, res, next) {
 function findOne(req, res, next) {
   commonController.findOne(UsersavedlocationModels, {
     id: req.params.saved_id,
-    type: "tag"
+    type: "save"
   }, function(err, data) {
     if (err) {
       res.send(500, err);

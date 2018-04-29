@@ -1,6 +1,6 @@
 # README #
 *http://googleapi.snowdropplayers.com:3003/
-
+*https://docs.google.com/spreadsheets/d/19oCmndwhviyahKYMym48diXM2O5_Zh42m_N3Y2GERD0/edit#gid=0
 
 This README would normally document whatever steps are necessary to get your application up and running.
 
