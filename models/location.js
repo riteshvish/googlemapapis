@@ -76,6 +76,9 @@ LocationSchema.statics.analytics = function(data, callback) {
         "_id": groupBy,
         count: {
           $sum: 1
+        },
+        "type": {
+          "$first": "$type"
         }
       }
     }],
